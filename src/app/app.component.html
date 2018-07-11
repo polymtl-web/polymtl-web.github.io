@@ -1,0 +1,35 @@
+<header>
+  <a class="no-decoration" routerLink="/accueil">
+    <h1><span id="logo">&lt;/&gt;</span> Référence web</h1>
+  </a>
+  <nav>
+    <ul>
+      <li routerLinkActive="active">
+        <a routerLink ="/accueil">Accueil</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink ="/tutoriels">Tutoriels</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink ="/guide">Guide</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink ="/a-propos">À propos</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <a class="no-decoration pull-right" href="http://www.polymtl.ca">
+    <img id="polymtl" alt="Polytechnique Montréal" src="./assets/images/polymtl.svg">
+  </a>
+  <p>
+    <a class="no-decoration" href="https://creativecommons.org/licenses/by-nd/2.0/ca/legalcode.fr">
+      <img id="license" alt="License CC BY-ND" src="./assets/images/by-nd.svg">
+    </a><br>
+    Le contenu de ce site web est disponible sous la licence CC BY-ND.
+  </p>
+</footer>

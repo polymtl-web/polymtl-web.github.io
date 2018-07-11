@@ -1,0 +1,65 @@
+@import '../../assets/styles/constants';
+
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.loading {
+  height: 80px;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 50%;
+}
+
+.sidebar {
+  min-height: calc(100vh - #{$header-height + $footer-height});
+  padding: $index-padding;
+  color: $index-color;
+  flex-basis: 25%;
+  border-right: 1px solid $index-border-color;
+  background-color: $index-background-color;
+  font-family: $heading-font;
+  font-size: $index-font-size;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+
+  ul {
+    list-style: none;
+
+    > li {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  > ul {
+    padding: 0;
+    margin: 0;
+
+    > li {
+      margin-bottom: 1em;
+    }
+
+    ul {
+      font-size: 0.85em;
+      padding-left: 0.6em;
+      margin-top: 0.6em;
+      border-left: 1px solid $medium-light-gray;
+
+      li > a {
+        color: $medium-gray;
+        transition: color ease-out 150ms;
+
+        &.active,
+        &:hover {
+          color: $dark-gray;
+        }
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

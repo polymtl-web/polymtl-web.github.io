@@ -1,0 +1,20 @@
+<app-not-found *ngIf="selectedCategoryId === null || selectedArticleId === null"></app-not-found>
+
+<section aria-label="Index" class="sidebar" *ngIf="selectedCategoryId && selectedArticleId">
+  <ul *ngIf="categories">
+    <li *ngFor="let category of categories">{{ category.name }}
+      <ul>
+        <li *ngFor="let article of category.articles">
+          <a [class.active]="category.id === selectedCategoryId && article.id === selectedArticleId"
+             routerLink="/{{ selectedType }}/{{ category.id }}/{{ article.id }}">{{ article.name }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<article class="main" *ngIf="selectedCategoryId && selectedArticleId">
+  <div>
+    <img class="loading" alt="Chargement..." src="./assets/images/loading.svg" *ngIf="!article">
+    <ngx-md *ngIf="article" [data]="article"></ngx-md>
+  </div>
+</article>

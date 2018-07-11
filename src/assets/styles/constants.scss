@@ -1,0 +1,54 @@
+/***** Colors *****/
+$black: #000;
+$dark-gray: #333;
+$medium-dark-gray: #454545;
+$medium-gray: #666;
+$medium-light-gray: #c5c5c5;
+$light-gray: #f1f1f1;
+$white: #fff;
+$red: #db7483;
+$green: #61a46e;
+$blue: #07a;
+$dark-blue: #00577b;
+
+/***** Dimensions *****/
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+
+/***** General *****/
+$heading-font: 'Roboto', sans-serif;
+$text-font: 'Open Sans', sans-serif;
+
+/***** Header *****/
+$header-height: 80px;
+$header-padding: 0 60px 0 30px;
+$header-background-color: $medium-dark-gray;
+$header-border: $dark-gray;
+$header-text-color: $white;
+$header-h1-font-size: 1.8em;
+
+$nav-font-size: 1.25em;
+$nav-item-spacing: 1.25em;
+$nav-item-color: $medium-light-gray;
+$nav-hovered-item-color: $light-gray;
+$nav-active-item-color: $white;
+
+/***** Main *****/
+$index-color: $medium-dark-gray;
+$index-background-color: $light-gray;
+$index-border-color: $medium-light-gray;
+$index-padding: 40px;
+$index-font-size: 1.4em;
+
+$article-padding: 40px 60px;
+$article-max-width: 960px;
+
+/***** Footer *****/
+$footer-height: 120px;
+$footer-color: $medium-gray;
+$footer-background-color: $medium-light-gray;
+$footer-border-color: $medium-gray;
+$footer-logo-height: 80px;
+$footer-padding: 20px 30px;

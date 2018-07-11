@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ts",
+    "name": "TypeScript",
+    "articles": [
+      {
+        "id": "test",
+        "name": "Article de test"
+      }
+    ]
+  }
+]

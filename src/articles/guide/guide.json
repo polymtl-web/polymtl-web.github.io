@@ -1,0 +1,64 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "articles": [
+      {
+        "id": "balises-semantiques",
+        "name": "Balises sémantiques"
+      },
+      {
+        "id": "plan-document",
+        "name": "Plan de document"
+      },
+      {
+        "id": "validation-page",
+        "name": "Validation de la page"
+      }
+    ]
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "articles": [
+      {
+        "id": "identifiants",
+        "name": "Identifiants"
+      },
+      {
+        "id": "classes",
+        "name": "Classes"
+      },
+      {
+        "id": "elements",
+        "name": "Éléments"
+      },
+      {
+        "id": "unites",
+        "name": "Unités de mesure"
+      },
+      {
+        "id": "couleurs",
+        "name": "Couleurs"
+      },
+      {
+        "id": "positionnement",
+        "name": "Positionnement"
+      },
+      {
+        "id": "preprocesseurs",
+        "name": "Préprocesseurs"
+      }
+    ]
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "articles": [
+      {
+        "id": "",
+        "name": ""
+      }
+    ]
+  }
+]

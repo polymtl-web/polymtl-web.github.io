@@ -1,0 +1,184 @@
+@import 'constants';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $text-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-blue;
+  }
+}
+
+p {
+  line-height: 1.5em;
+  font-size: 1.1em;
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  padding: $article-padding;
+
+  > div {
+    max-width: $article-max-width;
+    margin: auto;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.panel {
+  margin: 2.5em 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
+  > .title {
+    padding: 10px;
+    color: $white;
+    background-color: $medium-gray;
+
+    h2, h3, h4, h5, h6 {
+      margin: 0;
+      font-size: 1.1em;
+      font-weight: normal;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  > .content {
+    padding: 10px;
+    border: 1px solid $medium-gray;
+
+    p {
+      margin: 0.6em 0;
+      font-size: 1em;
+    }
+  }
+}
+
+.panel.wrong {
+  > .title {
+    background-color: $red;
+  }
+
+  > .content {
+    border-color: $red;
+  }
+}
+
+.panel.good {
+  > .title {
+    background-color: $green;
+  }
+
+  > .content {
+    border-color: $green;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+
+  > .col {
+    flex: 1;
+
+    &:not(:first-child) {
+      padding-left: 5px;
+    }
+
+    &:not(:last-child) {
+      padding-right: 5px;
+    }
+  }
+}
+
+ul.info {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85em;
+  color: $medium-gray;
+  margin: 1em 0;
+
+  > li {
+    display: inline-block;
+  }
+
+  > li:not(:first-child) {
+    margin-left: 1em;
+  }
+
+  i {
+    margin-right: 0.2em;
+  }
+}
+
+pre[class*='language'] {
+  padding-top: 20px;
+}
+
+pre[class*='language']:before {
+  float: right;
+  color: #999;
+  margin-top: -1.2em;
+  margin-right: -0.5em;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+pre[class*='css']:before {
+  content: 'CSS';
+}
+
+pre[class*='html']:before {
+  content: 'HTML';
+}
+
+pre[class*='js']:before {
+  content: 'JavaScript';
+}
+
+pre[class*='json']:before {
+  content: 'JSON';
+}
+
+pre[class*='typescript']:before {
+  content: 'TypeScript';
+}

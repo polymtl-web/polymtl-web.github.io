@@ -1,5 +1,6 @@
 @import 'constants';
 
+/***** General *****/
 * {
   box-sizing: border-box;
 }
@@ -39,12 +40,55 @@ p {
   font-size: 1.1em;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2.5em 0;
+
+  thead {
+    background-color: $very-light-gray;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  th,
+  td {
+    padding: 0.85em;
+  }
+
+  th {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid $gray;
+  }
+}
+
+/***** Classes *****/
+.btn {
+  color: $dark-gray;
+  padding: 10px;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  background-color: $very-light-gray;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+
+  &:hover {
+    color: $dark-gray;
+    background-color: $light-gray;
+  }
+}
+
 .main {
   position: relative;
   flex: 1;
   padding: $article-padding;
 
   > div {
+    position: relative;
+    height: 100%;
     max-width: $article-max-width;
     margin: auto;
   }
@@ -146,6 +190,7 @@ ul.info {
   }
 }
 
+/***** Code *****/
 pre[class*='language'] {
   padding-top: 20px;
 }

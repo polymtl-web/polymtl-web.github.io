@@ -4,7 +4,9 @@ $dark-gray: #333;
 $medium-dark-gray: #454545;
 $medium-gray: #666;
 $medium-light-gray: #c5c5c5;
-$light-gray: #f1f1f1;
+$gray: #ddd;
+$light-gray: #eeeeee;
+$very-light-gray: #f1f1f1;
 $white: #fff;
 $red: #db7483;
 $green: #61a46e;
@@ -32,12 +34,12 @@ $header-h1-font-size: 1.8em;
 $nav-font-size: 1.25em;
 $nav-item-spacing: 1.25em;
 $nav-item-color: $medium-light-gray;
-$nav-hovered-item-color: $light-gray;
+$nav-hovered-item-color: $very-light-gray;
 $nav-active-item-color: $white;
 
 /***** Main *****/
 $index-color: $medium-dark-gray;
-$index-background-color: $light-gray;
+$index-background-color: $very-light-gray;
 $index-border-color: $medium-light-gray;
 $index-padding: 40px;
 $index-font-size: 1.4em;

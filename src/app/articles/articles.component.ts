@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArticlesService, Category } from '../articles.service';
+import { getArticleTypeFromString, ArticleType, Category } from '../article';
+import { ArticlesService } from '../articles.service';
 
 /**
  * Defines the component responsible to display the tutorials or guide pages.
@@ -14,7 +15,7 @@ export class ArticlesComponent implements OnInit {
   categories: Category[];
   selectedArticleId: string;
   selectedCategoryId: string;
-  selectedType: string;
+  selectedType: ArticleType;
 
   /**
    * Initializes a new instance of the ArticlesComponent class.
@@ -31,7 +32,12 @@ export class ArticlesComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.selectedArticleId = params.get('article') || undefined;
       this.selectedCategoryId = params.get('category') || undefined;
-      this.selectedType = this.route.snapshot.url[0].path;
+      this.selectedType = getArticleTypeFromString(this.route.snapshot.url[0].path);
+
+      // If the article type specified is invalid.
+      if (!this.selectedType) {
+        return;
+      }
 
       // Load the categories of the current article type.
       this.articlesService.getCategories(this.selectedType).then(categories => {

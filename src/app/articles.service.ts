@@ -1,22 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-/**
- * Defines an article.
- */
-interface Article {
-  id: string;
-  name: string;
-}
-
-/**
- * Defines a category.
- */
-export interface Category {
-  id: string;
-  name: string;
-  articles: Article[];
-}
+import { ArticleType, Category } from './article';
 
 /**
  * Defines the service responsible to retrieve the articles information.
@@ -31,13 +15,12 @@ export class ArticlesService {
    * @param {HttpClient} http   The HTTP client to use.
    */
   constructor(private http: HttpClient) {
-    this.types['guide'] = this.http.get('./articles/guide/guide.json')
-      .toPromise()
-      .then(response => response as Category[]);
-
-    this.types['tutoriels'] = this.http.get('./articles/tutoriels/tutoriels.json')
-      .toPromise()
-      .then(response => response as Category[]);
+    Object.keys(ArticleType).forEach(key => {
+      const value = ArticleType[key];
+      this.types[value] = this.http.get(`./articles/${value}/${value}.json`)
+        .toPromise()
+        .then(response => response as Category[]);
+    });
   }
 
   /**
@@ -46,7 +29,7 @@ export class ArticlesService {
    * @param type                        The article type.
    * @returns {Promise<Category[]>}     A promise that contains the available categories for the article type specified.
    */
-  getCategories(type): Promise<Category[]> {
+  getCategories(type: ArticleType): Promise<Category[]> {
     if (this.types[type]) {
       return this.types[type];
     }
@@ -61,7 +44,7 @@ export class ArticlesService {
    * @param articleId             The article ID to retrieve.
    * @returns {Promise<string>}
    */
-  getArticle(type, categoryId, articleId): Promise<string> {
+  getArticle(type: ArticleType, categoryId, articleId): Promise<string> {
     return this.http.get(`./articles/${type}/${categoryId}/${articleId}.md`, { responseType: 'text' })
       .toPromise()
       .then(response => response as string);

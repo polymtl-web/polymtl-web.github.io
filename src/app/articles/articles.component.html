@@ -1,4 +1,4 @@
-<app-not-found *ngIf="selectedCategoryId === null || selectedArticleId === null"></app-not-found>
+<app-not-found *ngIf="selectedType === null || selectedCategoryId === null || selectedArticleId === null"></app-not-found>
 
 <section aria-label="Index" class="sidebar" *ngIf="selectedCategoryId && selectedArticleId">
   <ul *ngIf="categories">
@@ -15,5 +15,10 @@
 <article class="main" *ngIf="selectedCategoryId && selectedArticleId">
   <div>
     <ngx-md path="./articles/{{ selectedType }}/{{ selectedCategoryId }}/{{ selectedArticleId }}.md"></ngx-md>
+    <div id="article-options">
+      <a class="btn pull-right" href="https://github.com/polymtl-web/polymtl-web.github.io/issues/new">
+        <i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Signaler une coquille
+      </a>
+    </div>
   </div>
 </article>

@@ -6,7 +6,7 @@
       <ul>
         <li *ngFor="let article of category.articles">
           <a [class.active]="category.id === selectedCategoryId && article.id === selectedArticleId"
-             routerLink="/{{ selectedType }}/{{ category.id }}/{{ article.id }}">{{ article.name }}</a>
+             routerLink="/{{ selectedType }}/{{ category.id }}/{{ article.id }}" [innerHTML]="article.name"></a>
         </li>
       </ul>
     </li>

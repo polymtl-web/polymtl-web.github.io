@@ -1,2 +1,2 @@
-# Syntaxe ES6
+# Fonctionnalités ES6
 ...

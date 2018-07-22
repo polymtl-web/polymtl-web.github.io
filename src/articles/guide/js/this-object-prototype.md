@@ -1,2 +1,2 @@
-# _this_ et _object prototype_
+# Contexte _this_ et _object prototype_
 ...

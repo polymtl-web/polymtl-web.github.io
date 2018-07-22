@@ -56,8 +56,28 @@
     "name": "JavaScript",
     "articles": [
       {
-        "id": "",
-        "name": ""
+        "id": "fonctions",
+        "name": "Fonctions"
+      },
+      {
+        "id": "listes",
+        "name": "Listes"
+      },
+      {
+        "id": "asychronisme",
+        "name": "Asynchronisme"
+      },
+      {
+        "id": "this-object-prototype",
+        "name": "Contexte <em>this</em> et <em>object prototype</em>"
+      },
+      {
+        "id": "es6",
+        "name": "Fonctionnalités ES6"
+      },
+      {
+        "id": "organisation-code",
+        "name": "Organisation du code"
       }
     ]
   }

@@ -11,7 +11,6 @@ import { ArticlesService, Category } from '../articles.service';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
-  article: string;
   categories: Category[];
   selectedArticleId: string;
   selectedCategoryId: string;
@@ -30,9 +29,8 @@ export class ArticlesComponent implements OnInit {
    */
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.article = undefined;
-      this.selectedArticleId = params.get('article');
-      this.selectedCategoryId = params.get('category');
+      this.selectedArticleId = params.get('article') || undefined;
+      this.selectedCategoryId = params.get('category') || undefined;
       this.selectedType = this.route.snapshot.url[0].path;
 
       // Load the categories of the current article type.
@@ -55,12 +53,6 @@ export class ArticlesComponent implements OnInit {
             !category.articles.find(a => a.id === this.selectedArticleId)) {
             this.selectedArticleId = null;
           }
-        }
-
-        // Load the article if all the parameters provided are valid.
-        if (this.selectedCategoryId && this.selectedArticleId) {
-          this.articlesService.getArticle(this.selectedType, this.selectedCategoryId, this.selectedArticleId)
-            .then(article => this.article = article);
         }
       });
     });

@@ -14,7 +14,6 @@
 </section>
 <article class="main" *ngIf="selectedCategoryId && selectedArticleId">
   <div>
-    <img class="loading" alt="Chargement..." src="./assets/images/loading.svg" *ngIf="!article">
-    <ngx-md *ngIf="article" [data]="article"></ngx-md>
+    <ngx-md path="./articles/{{ selectedType }}/{{ selectedCategoryId }}/{{ selectedArticleId }}.md"></ngx-md>
   </div>
 </article>

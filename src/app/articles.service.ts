@@ -19,7 +19,7 @@ export interface Category {
 }
 
 /**
- * Defines the service responsible to retrieve the articles.
+ * Defines the service responsible to retrieve the articles information.
  */
 @Injectable()
 export class ArticlesService {

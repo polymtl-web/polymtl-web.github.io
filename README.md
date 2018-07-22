@@ -98,6 +98,6 @@ la licence [CC BY-ND](https://creativecommons.org/licenses/by-nd/2.0/ca/legalcod
 Ce projet a été réalisé par:
 
 - [Antoine Béland](https://github.com/antoinebeland)
-- Dylan Farvaque
+- [Dylan Farvaque](https://github.com/dyc0de)
 - [Konstantinos Lambrou-Latreille](https://github.com/koslambrou)
 - [Nikolay Radoev](https://github.com/Bodheem)

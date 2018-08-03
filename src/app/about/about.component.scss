@@ -2,3 +2,22 @@
   display: flex;
   width: 100%;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.author {
+  text-align: center;
+
+  img {
+    margin-bottom: 8px;
+  }
+
+  &:hover a img {
+    opacity: 0.8;
+    transition: opacity 0.1s ease-out;
+  }
+}

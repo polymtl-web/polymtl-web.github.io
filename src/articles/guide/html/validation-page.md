@@ -12,8 +12,8 @@ vous pouvez regarder avant de faire valider votre page par l'outil de W3C:
 
 1. Toutes les balises sont en minuscules
    ```html
-    <P></P> <!-- Mauvais -->
-    <p></p> <!-- Bon -->
+    <EM></EM> <!-- Mauvais -->
+    <em></em> <!-- Bon -->
    ```
 
 1. Toutes les balises sont fermées

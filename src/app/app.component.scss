@@ -8,6 +8,7 @@
   height: $footer-logo-height;
 }
 
+// ***** Header *****
 header {
   position: relative;
   height: $header-height;
@@ -39,7 +40,6 @@ header {
 
 header > nav {
   display: inline-block;
-  float: right;
   font-size: $nav-font-size;
 
   > ul {
@@ -79,12 +79,73 @@ header > nav {
   }
 }
 
+header > button {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: $nav-font-size * 1.6;
+  height: $header-height;
+  line-height: $header-height;
+  color: $nav-item-color;
+  display: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $nav-hovered-item-color;
+  }
+}
+
+
+@media screen and (max-width: $medium-screen) {
+  header > button {
+    display: inline-block;
+  }
+
+  header > nav {
+    display: block;
+    position: relative;
+    top: 1px;
+    float: none;
+    background-color: rgba($header-background-color, 0.95);
+    z-index: 1000;
+    margin: 0 -1 * $header-right-padding 0 -1 * $header-left-padding;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+
+    &.visible {
+      max-height: 4 * $header-height;
+    }
+
+    > ul > li {
+      display: block;
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        border-bottom: 1px solid $nav-active-background-color;
+      }
+
+      &.active {
+        background-color: rgba($nav-border-color, 0.95);
+
+        > a {
+          color: $nav-active-item-color;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// ***** Main *****
 main {
   min-height: calc(100vh - #{$header-height + $footer-height});
   margin-bottom: $footer-height;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
 }
 
+// ***** Footer *****
 footer {
   position: absolute;
   bottom: 0;

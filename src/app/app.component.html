@@ -2,18 +2,21 @@
   <a class="no-decoration" routerLink="/accueil">
     <h1><i class="fa fa-code" aria-hidden="true"></i> Référence web</h1>
   </a>
-  <nav>
+  <button class="pull-right" (click)="toggleMenu()">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
+  <nav class="pull-right" [class.visible]="isMenuVisible">
     <ul>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" (click)="hideMenu()">
         <a routerLink ="/accueil">Accueil</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" (click)="hideMenu()">
         <a routerLink ="/tutoriels">Tutoriels</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" (click)="hideMenu()">
         <a routerLink ="/guide">Guide</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" (click)="hideMenu()">
         <a routerLink ="/a-propos">À propos</a>
       </li>
     </ul>

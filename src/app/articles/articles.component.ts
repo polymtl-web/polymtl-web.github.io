@@ -85,5 +85,6 @@ export class ArticlesComponent implements OnInit {
    */
   hideSidebar() {
     this.isSidebarVisible = false;
+    this.windowScrollingService.enable();
   }
 }

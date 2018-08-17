@@ -198,6 +198,8 @@ ul {
 
   > .col {
     flex: 1;
+    max-width: 100%;
+    overflow: hidden;
 
     &:not(:first-child) {
       padding-left: 5px;
@@ -229,7 +231,36 @@ ul.info {
   }
 }
 
+@media screen and (max-width: $large-screen) {
+  .row {
+    flex-wrap: wrap;
+
+    > .col {
+      flex-basis: 100%;
+
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen) {
+  .main {
+    padding: $article-small-medium-screen-padding;
+  }
+}
+
 /***** Code *****/
+pre {
+  max-width: inherit;
+}
+
+
 pre[class*='language'] {
   padding-top: 20px;
 }

@@ -1,31 +1,34 @@
 <header>
-  <a class="no-decoration" routerLink="/accueil">
-    <h1><i class="fa fa-code" aria-hidden="true"></i> Référence web</h1>
-  </a>
-  <button class="pull-right" (click)="toggleMenu()">
+  <button (click)="toggleSidebar()" [class.visible]="isOnArticlesPage">
     <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
-  <nav class="pull-right" [class.visible]="isMenuVisible">
+  <a class="no-decoration" routerLink="/accueil">
+    <h1>
+      <span class="fa-stack" aria-hidden="true">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-code fa-stack-1x"></i>
+      </span>
+      <span id="site-title"> Référence web</span>
+    </h1>
+  </a>
+  <nav class="pull-right">
     <ul>
-      <li routerLinkActive="active" (click)="hideMenu()">
+      <li routerLinkActive="active">
         <a routerLink ="/accueil">Accueil</a>
       </li>
-      <li routerLinkActive="active" (click)="hideMenu()">
+      <li routerLinkActive="active">
         <a routerLink ="/tutoriels">Tutoriels</a>
       </li>
-      <li routerLinkActive="active" (click)="hideMenu()">
+      <li routerLinkActive="active">
         <a routerLink ="/guide">Guide</a>
-      </li>
-      <li routerLinkActive="active" (click)="hideMenu()">
-        <a routerLink ="/a-propos">À propos</a>
       </li>
     </ul>
   </nav>
 </header>
 <main>
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="onRouterOutletActivate($event)"></router-outlet>
 </main>
-<footer>
+<footer [class.full-width]="!isOnArticlesPage">
   <a class="no-decoration pull-right" href="http://www.polymtl.ca">
     <img id="polymtl" alt="Polytechnique Montréal" src="./assets/images/polymtl.svg">
   </a>

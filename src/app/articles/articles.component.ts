@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { getArticleTypeFromString, ArticleType, Category } from '../article';
 import { ArticlesService } from '../articles.service';
+import {WindowScrollingService} from '../window-scrolling.service';
 
 /**
  * Defines the component responsible to display the tutorials or guide pages.
@@ -13,6 +14,7 @@ import { ArticlesService } from '../articles.service';
 })
 export class ArticlesComponent implements OnInit {
   categories: Category[];
+  isSidebarVisible = false;
   selectedArticleId: string;
   selectedCategoryId: string;
   selectedType: ArticleType;
@@ -20,10 +22,12 @@ export class ArticlesComponent implements OnInit {
   /**
    * Initializes a new instance of the ArticlesComponent class.
    *
-   * @param {ActivatedRoute} route                The current activated route.
-   * @param {ArticlesService} articlesService     The articles service to use.
+   * @param {ActivatedRoute}          route                       The current activated route.
+   * @param {ArticlesService}         articlesService             The articles service to use.
+   * @param {WindowScrollingService}  windowScrollingService      The service to use to manage the window scroll.
    */
-  constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
+  constructor(private route: ActivatedRoute, private articlesService: ArticlesService,
+              private windowScrollingService: WindowScrollingService) { }
 
   /**
    * Occurs when the component is initialized.
@@ -62,5 +66,24 @@ export class ArticlesComponent implements OnInit {
         }
       });
     });
+  }
+
+  /**
+   * Toggles the index sidebar.
+   */
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+    if (this.isSidebarVisible) {
+      this.windowScrollingService.disabled();
+    } else {
+      this.windowScrollingService.enable();
+    }
+  }
+
+  /**
+   * Hides the index sidebar.
+   */
+  hideSidebar() {
+    this.isSidebarVisible = false;
   }
 }

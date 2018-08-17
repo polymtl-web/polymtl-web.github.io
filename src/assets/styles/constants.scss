@@ -24,14 +24,12 @@ $heading-font: 'Roboto', sans-serif;
 $text-font: 'Open Sans', sans-serif;
 
 /***** Header *****/
-$header-height: 80px;
-$header-left-padding: 30px;
-$header-right-padding: 60px;
-$header-padding: 0 $header-right-padding 0 $header-left-padding;
+$header-height: 75px;
+$header-left-right-padding: 30px;
 $header-background-color: $medium-dark-gray;
 $header-border: $dark-gray;
 $header-text-color: $white;
-$header-h1-font-size: 1.8em;
+$header-h1-font-size: 1.65em;
 
 $nav-font-size: 1.25em;
 $nav-item-spacing: 1.25em;
@@ -49,12 +47,13 @@ $index-padding: 40px;
 $index-font-size: 1.4em;
 
 $article-padding: 40px 60px;
+$article-small-medium-screen-padding: 20px 30px;
 $article-max-width: 960px;
 
 /***** Footer *****/
 $footer-height: 120px;
 $footer-color: $medium-gray;
-$footer-background-color: $medium-light-gray;
-$footer-border-color: $medium-gray;
+$footer-background-color: $gray;
+$footer-border-color: $light-gray;
 $footer-logo-height: 80px;
 $footer-padding: 20px 30px;

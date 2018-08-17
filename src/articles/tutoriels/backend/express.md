@@ -181,3 +181,85 @@ Maintenant, notre **server.js** a l'air beaucoup plus propre et toute la logique
 Dans notre exemple, nous avons défini le chemin de base '/log2990/' donc '/about' devient alors une sous-route de /log2990/ et accessible seulement par '/log2990/about/'.
 
 Comme exercice, vous pouvez créer votre propre routeur pour **LOG4420** dans un fichier **log4420.js** avec les mêmes méthodes que **log2990.js** et voir la différence entre les deux routeurs.
+
+
+## Middleware
+
+Express fonctionne un peu comme une chaine de montage avec plusieurs étapes qui se terminent lorsqu'on envoie une réponse à la requête reçue par le serveur. À date, nous avons vu seulement des chaînes de montage d'un seule étape. Pour inclure d'autres étapes à notre chaîne, on fait usage des **Middleware** qui sont offerts par Express. 
+
+Un **Middleware** se présente sous la forme suivante :
+
+```js
+var express = require('Express');
+var app = express();
+
+//Notre middleware
+app.use('/about/',function(req,res,next){
+	console.log("Le temps de la requete est : " + Date.now());
+	next();
+})
+
+app.get('/', function(req,res){
+    res.send("Exemple de serveur Node avec routage!");
+})
+app.get('/about',function(req,res){
+    res.send("Une page sur nous");
+})
+app.get('/express',function(req,res){
+    res.send("Une page sur ExpressJS");
+})
+
+app.listen(3000);
+```
+
+Si on lance notre serveur et on va sur les différentes pages, on peut voir que seulement la page '/about' produit une sortie dans la console. Ceci est du au fait que la fonction **app.use** a le paramètre de la route qui définit ou le **Middleware** est appliqué. Si jamais le paramètre est vide, le **Middleware** est appliqué sur toutes les routes.
+Nous avons un nouveau paramètre dans la fonction de _callback_ de  **app.use** : **next**. **next**, comme son nom l'indique, est la directive qui dit à notre **Middleware** de terminer et de passer à la prochaine étape à la chaîne de **Middleware**. Si **next** est appelé avec 'route', (**next('route')**), le contrôle est passé à la prochaine fonction qui gère la route et saute complétement tous les **Middleware** entre les deux.
+
+Les **Middleware** peuvent aussi être utilisés dans un **Router** et ne sont valides que sur les méthodes dans le **Router**. L'utilisation reste exactement la même, sauf pour le saut de **Middleware** qui se fait plutôt avec **next('router')**.
+
+L'ordre des **Middleware** est très important aussi. Ils sont exécutés dans l'ordre dans lesquels ils sont définis. Lorsqu'on avait présenté le routage, une notre importante était donnée pour des routes de type /* placées au début du fichier. Comme elles étaient définies en premier, elles étaient aussi exécutées en premier et on ne se rend jamais plus loins. Il est important d'être conscient de l'ordre de vos **Middleware** et de s'assurer qu'ils sont définis dans l'ordre dans lequel vous voulez qu'ils soient exécutés.
+
+Voici un exemple concret de la séquence de **Middleware** que pouvez tester :
+
+```js
+var express = require('express');
+var app = express();
+
+//Premier Middleware
+app.use(function(req, res, next){
+   console.log("Debut");
+   next();
+});
+
+
+app.get('/', function(req, res, next){
+   console.log("Traitement de la requete");
+   res.send("Traitement de la requete");
+   next();
+});
+
+// Dernier Middleware
+app.use('/', function(req, res){
+   console.log('Fin');
+});
+
+app.listen(3000);
+```
+
+Si on lance notre serveur et on va sur la page '/', On peut voir que dans notre console, on a le message suivant :
+
+```powershell
+Debut
+Traitement de la requete
+Fin
+```
+
+Il existe un type spécifique de **Middleware** qui traite les erreurs. La fonction a une signature spécifique avec **4** paramètres et le premiers est toujours **l'erreur** et le dernier est **next** qui doit **toujours** être spécifié, même s'il n'est pas appelé.
+Voici un exemple d'un **Middleware** de traitement d'erreur :
+
+```js
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send('Il y a quelque chose de brise!')
+})
+```

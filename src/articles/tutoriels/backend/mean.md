@@ -20,4 +20,3 @@ _MEAN_ peut être essentielleemnt divisé en trois parties : client (Angular), s
 L'avantage d'avoir une telle séparation est que chaque composante du stack peut être remplacé par une autre technologie si le développeur le souhaite. Par exemple, Angular peut être remplacé par React ou Vue.js et le reste de l'application du côté serveur n'a pas besoin d'être modifiée.
 _MEAN_ est utilisé surtout à cause de l'intégration facile entre les différentes modules et l'utilisation du même langage de programation sur tout le projet.
 
-

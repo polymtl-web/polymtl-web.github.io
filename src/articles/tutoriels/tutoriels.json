@@ -5,15 +5,15 @@
     "articles": [
       {
         "id" : "mean",
-        "name" : "Introduction a MEAN"
+        "name" : "Introduction à MEAN"
       },
       {
         "id": "node",
-        "name": "Node"
+        "name": "Node.js"
       },
       {
-        "id": "fileSystem",
-        "name" : "File System"
+        "id": "systeme-fichiers",
+        "name" : "Système de fichiers"
       },
       {
         "id": "express",

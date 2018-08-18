@@ -77,7 +77,6 @@ export class ArticlesComponent implements OnInit {
       this.windowScrollingService.disable();
     } else {
       this.windowScrollingService.enable();
-      this.windowScrollingService.scrollToTop();
     }
   }
 

@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 
 /**
- * Defines the service responsible to manager to window scrolling.
+ * Defines the service responsible to manage the window scrolling.
  */
 @Injectable()
 export class WindowScrollingService {
@@ -21,7 +21,7 @@ export class WindowScrollingService {
   /**
    * Disables the window scrolling.
    */
-  disabled() {
+  disable() {
     this.renderer.setStyle(this.document.body, 'overflow', 'hidden');
   }
 

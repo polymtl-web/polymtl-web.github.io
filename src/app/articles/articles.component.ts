@@ -74,7 +74,7 @@ export class ArticlesComponent implements OnInit {
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
     if (this.isSidebarVisible) {
-      this.windowScrollingService.disabled();
+      this.windowScrollingService.disable();
     } else {
       this.windowScrollingService.enable();
     }

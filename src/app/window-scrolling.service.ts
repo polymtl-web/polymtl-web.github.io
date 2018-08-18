@@ -31,4 +31,12 @@ export class WindowScrollingService {
   enable() {
     this.renderer.setStyle(this.document.body, 'overflow', 'auto');
   }
+
+  /**
+   * Scrolls window to top position.
+   */
+  scrollToTop() {
+    this.document.body.scrollTop = 0;
+    this.document.documentElement.scrollTop = 0;
+  }
 }

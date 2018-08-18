@@ -1,14 +1,5 @@
 @import '../assets/styles/constants';
 
-#license {
-  margin-bottom: 0.5em;
-}
-
-#polymtl {
-  height: $footer-logo-height;
-  margin-left: 20px;
-}
-
 // ***** Header *****
 header {
   position: fixed;
@@ -21,11 +12,11 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
   font-family: $heading-font;
   text-transform: uppercase;
+  line-height: $header-height;
   z-index: 2;
 
   h1 {
     display: inline-block;
-    line-height: $header-height;
     margin: 0;
     color: $white;
     font-size: $header-h1-font-size;
@@ -34,7 +25,6 @@ header {
 
     > .fa-stack {
       position: relative;
-      top: -0.15em;
       font-size: 0.95em;
       margin-right: 0.2em;
 
@@ -52,14 +42,18 @@ header {
 header > nav {
   display: inline-block;
   font-size: $nav-font-size;
+  height: inherit;
 
   > ul {
     padding: 0;
     margin: 0;
     list-style: none;
+    line-height: inherit;
+    height: inherit;
 
     > li {
       display: inline-block;
+      height: inherit;
 
       &:not(:last-child) {
         margin-right: $nav-item-spacing;
@@ -80,8 +74,7 @@ header > nav {
 
       > a {
         display: inherit;
-        height: $header-height;
-        line-height: $header-height;
+        height: inherit;
         color: $nav-item-color;
         text-decoration: none;
         transition: color ease-out 150ms;
@@ -95,14 +88,14 @@ header > button {
   background: none;
   outline: none;
   font-size: $header-h1-font-size;
-  height: $header-height;
-  line-height: $header-height;
+  height: inherit;
   color: $nav-item-color;
   display: none;
   cursor: pointer;
   position: relative;
   left: -0.5em;
   padding: 0 0.3em 0 0.5em;
+  line-height: inherit;
 
   &:hover {
     color: $nav-hovered-item-color;
@@ -125,12 +118,32 @@ header > button {
   }
 }
 
+@media screen and (max-width: $small-screen) {
+  header {
+    font-size: 0.9em;
+    padding: 0 $header-left-right-padding-small-screen;
+    height: $header-height-small-screen;
+    line-height: $header-height-small-screen;
+
+    nav {
+      font-size: $nav-font-size * 0.8;
+    }
+  }
+}
+
 // ***** Main *****
 main {
   min-height: calc(100vh - #{$header-height + $footer-height});
   margin-top: $header-height;
   margin-bottom: $footer-height;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+@media screen and (max-width: $small-screen) {
+  main {
+    min-height: calc(100vh - #{$header-height-small-screen + $footer-height});
+    margin-top: $header-height-small-screen;
+  }
 }
 
 // ***** Footer *****
@@ -156,9 +169,28 @@ footer {
   }
 }
 
+#license {
+  margin-bottom: 0.5em;
+}
+
+#polymtl {
+  height: $footer-logo-height;
+  margin-left: 20px;
+}
+
 @media screen and (max-width: $medium-screen) {
   footer {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: $small-screen) {
+  #license {
+    height: $footer-license-icon-height-small-screen;
+  }
+
+  #polymtl {
+    height: $footer-logo-height-small-screen;
   }
 }

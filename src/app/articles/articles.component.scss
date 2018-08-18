@@ -93,3 +93,13 @@
     margin-left: 0;
   }
 }
+
+@media screen and (max-width: $small-screen) {
+  .sidebar {
+    height: calc(100vh - #{$header-height-small-screen});
+
+    &.visible {
+      padding: $index-padding-small-screen;
+    }
+  }
+}

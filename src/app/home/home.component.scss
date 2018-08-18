@@ -7,13 +7,13 @@
 
 .authors {
   display: flex;
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 
   > .author {
-    flex: 1;
     text-align: center;
+    flex: 1;
 
     &:not(:first-child) {
       padding-right: 5px;
@@ -32,19 +32,16 @@
       transition: opacity 0.1s ease-out;
     }
   }
-
 }
-
-
 
 @media screen and (max-width: $small-screen) {
   .authors {
     flex-wrap: wrap;
 
     > .author {
-      flex-basis: 33.333%;
-      margin-bottom: 1.5em;
       padding: 5px;
+      margin-bottom: 1.5em;
+      flex-basis: 33.333%;
     }
   }
 }

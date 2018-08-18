@@ -4,72 +4,69 @@
 header {
   position: fixed;
   top: 0;
+  z-index: 2;
   width: 100%;
   height: $header-height;
   padding: 0 $header-left-right-padding;
-  color: $header-text-color;
-  background-color: $header-background-color;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
   font-family: $heading-font;
-  text-transform: uppercase;
   line-height: $header-height;
-  z-index: 2;
+  color: $header-text-color;
+  text-transform: uppercase;
+  background-color: $header-background-color;
+  box-shadow: $header-box-shadow;
 
   h1 {
     display: inline-block;
     margin: 0;
-    color: $white;
     font-size: $header-h1-font-size;
     font-weight: normal;
+    color: $white;
     transition: color ease-out 150ms;
-
-    > .fa-stack {
-      position: relative;
-      font-size: 0.95em;
-      margin-right: 0.2em;
-
-      > .fa-code {
-        color: $header-background-color;
-      }
-    }
 
     &:hover {
       color: $very-light-gray;
+    }
+  }
+
+  .fa-stack {
+    position: relative;
+    margin-right: 0.2em;
+    font-size: 0.95em;
+
+    > .fa-code {
+      color: $header-background-color;
     }
   }
 }
 
 header > nav {
   display: inline-block;
-  font-size: $nav-font-size;
   height: inherit;
+  font-size: $nav-font-size;
 
   > ul {
+    height: inherit;
     padding: 0;
     margin: 0;
-    list-style: none;
     line-height: inherit;
-    height: inherit;
+    list-style: none;
 
     > li {
       display: inline-block;
       height: inherit;
 
+      // sass-lint:disable nesting-depth
       &:not(:last-child) {
         margin-right: $nav-item-spacing;
       }
 
-      &.active {
-        > a {
-          color: $nav-active-item-color;
-          border-bottom: 4px solid $nav-active-item-color;
-        }
+      &.active > a {
+        color: $nav-active-item-color;
+        border-bottom: 4px solid $nav-active-item-color;
       }
 
-      &:not(.active) {
-        > a:hover {
-          color: $nav-hovered-item-color;
-        }
+      &:not(.active) > a:hover {
+        color: $nav-hovered-item-color;
       }
 
       > a {
@@ -84,18 +81,18 @@ header > nav {
 }
 
 header > button {
-  border: none;
-  background: none;
-  outline: none;
-  font-size: $header-h1-font-size;
-  height: inherit;
-  color: $nav-item-color;
-  display: none;
-  cursor: pointer;
   position: relative;
   left: -0.5em;
+  display: none;
+  height: inherit;
   padding: 0 0.3em 0 0.5em;
+  font-size: $header-h1-font-size;
   line-height: inherit;
+  color: $nav-item-color;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  outline: none;
 
   &:hover {
     color: $nav-hovered-item-color;
@@ -109,7 +106,7 @@ header > button {
 }
 
 @media screen and (max-width: $medium-screen) {
-  header > button.visible {
+  header > .visible {
     display: inline-block;
   }
 
@@ -120,9 +117,9 @@ header > button {
 
 @media screen and (max-width: $small-screen) {
   header {
-    font-size: 0.9em;
-    padding: 0 $header-left-right-padding-small-screen;
     height: $header-height-small-screen;
+    padding: 0 $header-left-right-padding-small-screen;
+    font-size: 0.9em;
     line-height: $header-height-small-screen;
 
     nav {
@@ -136,7 +133,7 @@ main {
   min-height: calc(100vh - #{$header-height + $footer-height});
   margin-top: $header-height;
   margin-bottom: $footer-height;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  box-shadow: $main-box-shadow;
 }
 
 @media screen and (max-width: $small-screen) {
@@ -150,17 +147,17 @@ main {
 footer {
   position: absolute;
   bottom: 0;
+  z-index: -1;
   width: 75%;
   height: $footer-height;
   padding: $footer-padding;
-  border-top: 1px solid $footer-border-color;
-  background-color: $footer-background-color;
-  z-index: -1;
   margin-left: 25%;
+  background-color: $footer-background-color;
+  border-top: 1px solid $footer-border-color;
 
   &.full-width {
-    margin-left: 0;
     width: 100%;
+    margin-left: 0;
   }
 
   p {
@@ -180,8 +177,8 @@ footer {
 
 @media screen and (max-width: $medium-screen) {
   footer {
-    margin-left: 0;
     width: 100%;
+    margin-left: 0;
   }
 }
 

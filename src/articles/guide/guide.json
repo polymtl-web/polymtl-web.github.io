@@ -56,8 +56,8 @@
         "name": "Fonctions"
       },
       {
-        "id": "listes",
-        "name": "Listes"
+        "id": "manipulation-tableaux",
+        "name": "Manipulation des tableaux"
       },
       {
         "id": "asynchronisme",

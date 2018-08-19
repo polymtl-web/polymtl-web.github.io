@@ -42,10 +42,6 @@
         "name": "Couleurs"
       },
       {
-        "id": "positionnement",
-        "name": "Positionnement"
-      },
-      {
         "id": "preprocesseurs",
         "name": "Préprocesseurs"
       }
@@ -64,7 +60,7 @@
         "name": "Listes"
       },
       {
-        "id": "asychronisme",
+        "id": "asynchronisme",
         "name": "Asynchronisme"
       },
       {

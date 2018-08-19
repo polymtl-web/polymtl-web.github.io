@@ -85,7 +85,7 @@ const elementToFind = 'salut';
 let indexRetrieved = -1;
 
 // Approche longue et naïve
-for (let i = 0; indexRetrieved !== 1 && i < array.length; ++i) {
+for (let i = 0; indexRetrieved === -1 && i < array.length; ++i) {
   if (elementToFind === array[i]) {
     indexRetrieved = i;
   }

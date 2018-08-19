@@ -57,6 +57,9 @@ un élément dans la liste `articles` correspondant à cette même catégorie en
 }
 ```
 
+Assurez-vous que l'identifiant (`id`) spécifié respecte le format _[kebab-case](http://wiki.c2.com/?KebabCase)_. De plus,
+validez que le nom de l'identifiant est en français, puisqu'il apparaîtra dans l'URL du site web.
+
 Une fois cette dernière étape effectuée, le tutoriel que vous avez créé devrait être disponible sur le site web.
 
 ### Guide des bonnes pratiques web 

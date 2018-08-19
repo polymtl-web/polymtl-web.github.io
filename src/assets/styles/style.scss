@@ -112,12 +112,14 @@ table {
 
   thead {
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     background-color: $very-light-gray;
   }
 
   th,
   td {
     padding: 0.85em;
+    font-weight: inherit;
     line-height: 1.4em;
   }
 

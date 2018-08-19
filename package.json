@@ -10,7 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --base-href https://polymtl-web.github.io/ --aot --prod && cpy ./dist/index.html ./dist/ --rename=404.html",
-    "lint": "ng lint"
+    "sass-lint": "sass-lint -c src/sass-lint.yml -v -q",
+    "lint": "npm run sass-lint && ng lint"
   },
   "dependencies": {
     "@angular/animations": "^6.0.3",
@@ -40,6 +41,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "cpy-cli": "^2.0.0",
+    "sass-lint": "^1.12.1",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"

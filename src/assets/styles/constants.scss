@@ -1,11 +1,11 @@
-/***** Colors *****/
+// ***** Colors *****
 $black: #000;
 $dark-gray: #333;
 $medium-dark-gray: #454545;
 $medium-gray: #666;
 $medium-light-gray: #c5c5c5;
 $gray: #ddd;
-$light-gray: #eeeeee;
+$light-gray: #eee;
 $very-light-gray: #f1f1f1;
 $white: #fff;
 $red: #db7483;
@@ -13,25 +13,26 @@ $green: #61a46e;
 $blue: #07a;
 $dark-blue: #00577b;
 
-/***** Dimensions *****/
+// ***** Dimensions *****
 $small-screen: 576px;
 $medium-screen: 850px;
 $large-screen: 992px;
 $extra-large-screen: 1200px;
 
-/***** General *****/
+// ***** General *****
 $heading-font: 'Roboto', sans-serif;
 $text-font: 'Open Sans', sans-serif;
 
-/***** Header *****/
-$header-height: 80px;
-$header-left-padding: 30px;
-$header-right-padding: 60px;
-$header-padding: 0 $header-right-padding 0 $header-left-padding;
+// ***** Header *****
+$header-height: 75px;
+$header-height-small-screen: 60px;
+$header-left-right-padding: 30px;
+$header-left-right-padding-small-screen: 20px;
 $header-background-color: $medium-dark-gray;
 $header-border: $dark-gray;
+$header-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 $header-text-color: $white;
-$header-h1-font-size: 1.8em;
+$header-h1-font-size: 1.65em;
 
 $nav-font-size: 1.25em;
 $nav-item-spacing: 1.25em;
@@ -41,20 +42,36 @@ $nav-active-item-color: $white;
 $nav-active-background-color: $medium-gray;
 $nav-border-color: $medium-gray;
 
-/***** Main *****/
+// ***** Main *****
+$main-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
 $index-color: $medium-dark-gray;
 $index-background-color: $very-light-gray;
+$index-background-color-small-screen: rgba($index-background-color, 0.95);
 $index-border-color: $medium-light-gray;
-$index-padding: 40px;
+$index-box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
 $index-font-size: 1.4em;
+$index-padding: 40px;
+$index-padding-small-screen: 30px;
+$index-width: 25%;
 
 $article-padding: 40px 60px;
+$article-padding-medium-screen: 20px 30px;
+$article-padding-small-screen: 20px 20px;
 $article-max-width: 960px;
 
-/***** Footer *****/
+$code-language-color: #999;
+$code-background-color: rgba(27, 31, 35, 0.05);
+
+$button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+$panel-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// ***** Footer *****
 $footer-height: 120px;
 $footer-color: $medium-gray;
-$footer-background-color: $medium-light-gray;
-$footer-border-color: $medium-gray;
+$footer-background-color: $gray;
+$footer-border-color: $light-gray;
+$footer-license-icon-height-small-screen: 35px;
 $footer-logo-height: 80px;
+$footer-logo-height-small-screen: 50px;
 $footer-padding: 20px 30px;

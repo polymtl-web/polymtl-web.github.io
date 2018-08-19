@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ArticlesComponent} from './articles/articles.component';
 
 /**
  * Defines the main component of the application.
@@ -9,19 +10,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isMenuVisible = false;
+  currentComponent: any;
+  isOnArticlesPage = true;
 
   /**
-   * Toggles the nav menu.
+   * Occurs when the router outlet is activated.
+   *
+   * @param component   The component activated in the router outlet.
    */
-  toggleMenu() {
-    this.isMenuVisible = !this.isMenuVisible;
+  onRouterOutletActivate(component) {
+    this.isOnArticlesPage = component instanceof ArticlesComponent;
+    this.currentComponent = component;
   }
 
   /**
-   * Hides the nav menu.
+   * Toggles the sidebar (on articles page).
    */
-  hideMenu() {
-    this.isMenuVisible = false;
+  toggleSidebar() {
+    if (this.currentComponent && this.currentComponent instanceof ArticlesComponent) {
+      this.currentComponent.toggleSidebar();
+    }
   }
 }

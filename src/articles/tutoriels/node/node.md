@@ -1,4 +1,4 @@
-# Node
+# Node.js
 
 Node est beaucoup plus qu'un cadriciel, mais un environnement d'exécution complet qui permet de rouler JavaScript à l'extérieur d'un furteur web. Node est bati sur le V8 Engine de Chrome et est facilement utlisable sur plusieurs plateformes (Windows, Linux, OS X).
 

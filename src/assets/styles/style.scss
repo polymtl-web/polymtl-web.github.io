@@ -1,6 +1,6 @@
 @import 'constants';
 
-/***** General *****/
+// ***** General *****
 * {
   box-sizing: border-box;
 }
@@ -23,8 +23,8 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 1.5em 0 1em;
   font-family: $heading-font;
-  margin: 1.5em 0 1em 0;
 }
 
 h1:first-child {
@@ -44,22 +44,55 @@ code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27,31,35,0.05);
+  background-color: $code-background-color;
   border-radius: 3px;
 }
 
 p {
-  line-height: 1.5em;
   font-size: 1.1em;
+  line-height: 1.5em;
   text-align: justify;
 }
 
 pre {
+  max-width: inherit;
   overflow: auto;
-  -ms-word-wrap: normal;
   word-wrap: normal;
-  overflow-wrap: normal;
   white-space: pre;
+  overflow-wrap: normal;
+
+  &[class*='language'] {
+    padding-top: 20px;
+  }
+
+  &[class*='language']::before {
+    float: right;
+    margin-top: -1.2em;
+    margin-right: -0.5em;
+    font-size: 0.8em;
+    color: $code-language-color;
+    text-align: right;
+  }
+
+  &[class*='css']::before {
+    content: 'CSS';
+  }
+
+  &[class*='html']::before {
+    content: 'HTML';
+  }
+
+  &[class*='js']::before {
+    content: 'JavaScript';
+  }
+
+  &[class*='json']::before {
+    content: 'JSON';
+  }
+
+  &[class*='typescript']::before {
+    content: 'TypeScript';
+  }
 }
 
 pre code {
@@ -73,25 +106,25 @@ img {
 }
 
 table {
-  border-collapse: collapse;
   width: 100%;
   margin: 2.5em 0;
+  border-collapse: collapse;
 
   thead {
-    background-color: $very-light-gray;
     font-family: 'Roboto', sans-serif;
+    background-color: $very-light-gray;
   }
 
   th,
   td {
-    line-height: 1.4em;
     padding: 0.85em;
+    line-height: 1.4em;
   }
 
   th {
+    text-align: left;
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;
-    text-align: left;
   }
 
   td {
@@ -104,14 +137,20 @@ ul {
   line-height: 1.5em;
 }
 
-/***** Classes *****/
+@media screen and (max-width: $small-screen) {
+  body {
+    font-size: 0.9em;
+  }
+}
+
+// ***** Classes *****
 .btn {
-  color: $dark-gray;
   padding: 10px;
+  color: $dark-gray;
+  background-color: $very-light-gray;
   border: 1px solid $gray;
   border-radius: 4px;
-  background-color: $very-light-gray;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+  box-shadow: $button-box-shadow;
 
   &:hover {
     color: $dark-gray;
@@ -121,9 +160,9 @@ ul {
 
 .main {
   position: relative;
-  flex: 1;
   padding: $article-padding;
   overflow: hidden;
+  flex: 1;
 
   > div {
     position: relative;
@@ -139,14 +178,18 @@ ul {
 
 .panel {
   margin: 2.5em 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: $panel-box-shadow;
 
   > .title {
     padding: 10px;
     color: $white;
     background-color: $medium-gray;
 
-    h2, h3, h4, h5, h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
       font-size: 1.1em;
       font-weight: normal;
@@ -197,6 +240,8 @@ ul {
   justify-content: space-between;
 
   > .col {
+    max-width: 100%;
+    overflow: hidden;
     flex: 1;
 
     &:not(:first-child) {
@@ -209,12 +254,12 @@ ul {
   }
 }
 
-ul.info {
-  list-style: none;
+.info {
   padding: 0;
+  margin: 1em 0;
   font-size: 0.85em;
   color: $medium-gray;
-  margin: 1em 0;
+  list-style: none;
 
   > li {
     display: inline-block;
@@ -229,36 +274,32 @@ ul.info {
   }
 }
 
-/***** Code *****/
-pre[class*='language'] {
-  padding-top: 20px;
+@media screen and (max-width: $large-screen) {
+  .row {
+    flex-wrap: wrap;
+
+    > .col {
+      flex-basis: 100%;
+
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+
+      &:not(:last-child) {
+        padding-right: 0;
+      }
+    }
+  }
 }
 
-pre[class*='language']:before {
-  float: right;
-  color: #999;
-  margin-top: -1.2em;
-  margin-right: -0.5em;
-  font-size: 0.8em;
-  text-align: right;
+@media screen and (max-width: $medium-screen) {
+  .main {
+    padding: $article-padding-medium-screen;
+  }
 }
 
-pre[class*='css']:before {
-  content: 'CSS';
-}
-
-pre[class*='html']:before {
-  content: 'HTML';
-}
-
-pre[class*='js']:before {
-  content: 'JavaScript';
-}
-
-pre[class*='json']:before {
-  content: 'JSON';
-}
-
-pre[class*='typescript']:before {
-  content: 'TypeScript';
+@media screen and (max-width: $small-screen) {
+  .main {
+    padding: $article-padding-small-screen;
+  }
 }

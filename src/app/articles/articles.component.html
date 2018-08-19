@@ -1,17 +1,18 @@
 <app-not-found *ngIf="selectedType === null || selectedCategoryId === null || selectedArticleId === null"></app-not-found>
 
-<section aria-label="Index" class="sidebar" *ngIf="selectedCategoryId && selectedArticleId">
+<nav aria-label="Index" class="sidebar" *ngIf="selectedCategoryId && selectedArticleId" [class.visible]="isSidebarVisible">
   <ul *ngIf="categories">
     <li *ngFor="let category of categories">{{ category.name }}
       <ul>
         <li *ngFor="let article of category.articles">
           <a [class.active]="category.id === selectedCategoryId && article.id === selectedArticleId"
-             routerLink="/{{ selectedType }}/{{ category.id }}/{{ article.id }}" [innerHTML]="article.name"></a>
+             routerLink="/{{ selectedType }}/{{ category.id }}/{{ article.id }}" (click)="hideSidebar()"
+             [innerHTML]="article.name"></a>
         </li>
       </ul>
     </li>
   </ul>
-</section>
+</nav>
 <article class="main" *ngIf="selectedCategoryId && selectedArticleId">
   <div>
     <ngx-md path="./articles/{{ selectedType }}/{{ selectedCategoryId }}/{{ selectedArticleId }}.md"></ngx-md>

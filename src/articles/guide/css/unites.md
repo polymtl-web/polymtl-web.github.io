@@ -38,7 +38,7 @@ qui dépend de la taille de son parent.
 Le tableau suivant synthétise les informations qui ont été présentées.
 
 | Unité | Type      | Description                                                                                                                                     |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | em    | Relative  | Dépend de la taille la police de caractères de l'élément (3&nbsp;em correspond à trois fois la taille de la police de caractères de l'élément). |
 | px    | Absolue   | Un pixel correspond à 1/96 ème de pouce.                                                                                                        |
 | %     | Relative  | Dépend des tailles définies par l'élément parent.                                                                                               |

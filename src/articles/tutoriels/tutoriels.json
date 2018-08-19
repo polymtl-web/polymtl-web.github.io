@@ -1,7 +1,7 @@
 [
   {
     "id" : "general",
-    "name" : "Concepts Généraux",
+    "name" : "Concepts généraux",
     "articles":[
      {
        "id" : "mean",
@@ -10,7 +10,7 @@
      {
        "id" : "crud",
        "name" : "Méthodes HTTP"
-     } 
+     }
     ]
   },
   {
@@ -22,7 +22,7 @@
         "name": "Node.js"
       },
       {
-        "id": "fileSystem",
+        "id": "file-system",
         "name" : "Système de fichiers"
       }
     ]
@@ -55,7 +55,7 @@
     "articles" :[
       {
         "id" : "mongoose",
-        "name" : "Introduction à Momngoose"
+        "name" : "Introduction à Mongoose"
       },
       {
         "id" : "mlab",

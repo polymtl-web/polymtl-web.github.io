@@ -213,16 +213,6 @@ ul {
   }
 }
 
-.panel.wrong {
-  > .title {
-    background-color: $red;
-  }
-
-  > .content {
-    border-color: $red;
-  }
-}
-
 .panel.good {
   > .title {
     background-color: $green;
@@ -230,6 +220,26 @@ ul {
 
   > .content {
     border-color: $green;
+  }
+}
+
+.panel.warning {
+  > .title {
+    color: $black;
+    background-color: $yellow;
+  }
+
+  > .content {
+    border-color: $yellow;
+  }
+}
+.panel.wrong {
+  > .title {
+    background-color: $red;
+  }
+
+  > .content {
+    border-color: $red;
   }
 }
 

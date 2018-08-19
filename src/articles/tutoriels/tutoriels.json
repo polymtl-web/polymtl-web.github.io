@@ -1,12 +1,22 @@
 [
   {
+    "id" : "general",
+    "name" : "Concepts Généraux",
+    "articles":[
+     {
+       "id" : "mean",
+       "name" : "Introduction à MEAN"
+     },
+     {
+       "id" : "crud",
+       "name" : "Méthodes HTTP"
+     } 
+    ]
+  },
+  {
     "id": "node",
     "name": "Node",
     "articles": [
-      {
-        "id" : "mean",
-        "name" : "Introduction à MEAN"
-      },
       {
         "id": "node",
         "name": "Node.js"
@@ -32,7 +42,25 @@
      {
        "id" : "middleware",
        "name" : "Middleware"
+     },
+     {
+       "id" : "templating",
+       "name" : "Templating"
      }
+    ]
+  },
+  {
+    "id" : "mongoose",
+    "name" : "Mongoose",
+    "articles" :[
+      {
+        "id" : "mongoose",
+        "name" : "Introduction à Momngoose"
+      },
+      {
+        "id" : "mlab",
+        "name" : "Mlab"
+      }
     ]
   }
 

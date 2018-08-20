@@ -62,9 +62,7 @@ let elementIsFound = false;
 
 // Approche longue et naïve
 for (let i = 0; !elementIsFound && i < array.length; ++i) {
-  if (elementToFind === array[i]) {
-    elementIsFound = true;
-  }
+  elementIsFound = elementToFind === array[i];
 }
 
 // Approche fonctionnelle équivalente
@@ -158,7 +156,7 @@ for (let i = 0; i < array.length; ++i) {
 array = array.map(d => Math.pow(d, 2));
 ```
 
-## Validation d'une condition sur un tableau
+## Validation d'une condition sur les éléments d'un tableau
 
 Il est souvent nécessaire de valider une condition sur une ou toutes les valeurs d'un tableau. Pour y arriver,
 il est possible d'utiliser une boucle puis une variable booléenne pour conserver le résultat de la condition. Cependant,
@@ -180,9 +178,7 @@ const condition = d => d < 7;
 
 // Approche longue et naïve
 for (let i = 0; !isValid && i < array.length; ++i) {
-  if (condition(array[i])) {
-    isValid = true;
-  }
+  isValid = condition(array[i]);
 }
 
 // Approche fonctionnelle équivalente

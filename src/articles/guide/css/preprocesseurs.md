@@ -14,7 +14,7 @@ Les principaux préprocesseurs utilisés sur le marché sont [LESS](http://lessc
   </div>
   <div class="content">
   <p>
-    Lors du développement d'un projet de moyen ou de grande envergure, il est fortement recommandé d'utiliser un 
+    Lors du développement d'un projet de moyen ou de grande envergure, il est **fortement recommandé** d'utiliser un 
     **préprocesseurs CSS** pour écrire le code. Autrement, les feuilles de style peuvent s'avérer très complexes à maintenir.
   </p>
   </div>

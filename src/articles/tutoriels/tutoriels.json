@@ -50,12 +50,12 @@
     ]
   },
   {
-    "id" : "mongoose",
-    "name" : "Mongoose",
+    "id" : "mongoDB",
+    "name" : "MongoDB",
     "articles" :[
       {
-        "id" : "mongoose",
-        "name" : "Introduction à Mongoose"
+        "id" : "mongoDB",
+        "name" : "Introduction à MongoDB"
       },
       {
         "id" : "mlab",

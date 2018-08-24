@@ -54,12 +54,16 @@
     "name" : "MongoDB",
     "articles" :[
       {
-        "id" : "mongoDB",
+        "id" : "mongoDB_introduction",
         "name" : "Introduction à MongoDB"
       },
       {
         "id" : "mlab",
         "name" : "Mlab"
+      },
+      {
+        "id" : "mongoDB_utilisation",
+        "name" :"MongoDB Appliqué"
       }
     ]
   }

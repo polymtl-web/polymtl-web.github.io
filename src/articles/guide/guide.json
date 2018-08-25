@@ -31,8 +31,8 @@
     "name": "CSS",
     "articles": [
       {
-        "id": "elements",
-        "name": "Éléments",
+        "id": "types",
+        "name": "Types",
         "authors": [
           "Antoine Béland"
         ]
@@ -81,9 +81,7 @@
       {
         "id": "fonctions",
         "name": "Fonctions",
-        "authors": [
-          "Antoine Béland"
-        ]
+        "isVisible": false
       },
       {
         "id": "manipulation-tableaux",

@@ -3,7 +3,7 @@
 L'utilisation d'identifiants (`#id`) est **à éviter** en CSS. En effet, vous ne devez pas utiliser d'identifiants 
 si vous stylisez des éléments qui pourront être réutilisés sur une même page, puisque vous aurez à dupliquer inutilement 
 du code CSS tout en compliquant inutilement sa maintenance. Dans ce cas, vous devriez privilégier l'utilisation de 
-[sélecteurs d'éléments](./guide/css/elements) ou de [classes](./guide/css/classes).
+sélecteurs de [types](./guide/css/types) ou de [classes](./guide/css/classes).
 
 <section class="panel warning">
   <div class="title">
@@ -23,7 +23,7 @@ du code CSS tout en compliquant inutilement sa maintenance. Dans ce cas, vous de
   </div>
   <div class="content">
     <p>Cet exemple illustre une mauvaise utilisation des identifiants en CSS puisqu'il y a du code dupliqué inutilement. Il aurait été préférable
-    d'utiliser un sélecteur d'éléments ou une classe à la place.</p>
+    d'utiliser un sélecteur de type ou une classe à la place.</p>
     <div class="row">
       <div class="col">
         <pre><code class="language-css">#p1 { font-weight: bold; }

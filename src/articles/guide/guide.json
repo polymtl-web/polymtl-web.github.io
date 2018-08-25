@@ -5,15 +5,24 @@
     "articles": [
       {
         "id": "balises-semantiques",
-        "name": "Balises sémantiques"
+        "name": "Balises sémantiques",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "plan-document",
-        "name": "Plan de document"
+        "name": "Plan de document",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "validation-page",
-        "name": "Validation de la page"
+        "name": "Validation de la page",
+        "authors": [
+          "Antoine Béland"
+        ]
       }
     ]
   },
@@ -23,27 +32,45 @@
     "articles": [
       {
         "id": "elements",
-        "name": "Éléments"
+        "name": "Éléments",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "classes",
-        "name": "Classes"
+        "name": "Classes",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "identifiants",
-        "name": "Identifiants"
+        "name": "Identifiants",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "unites",
-        "name": "Unités de mesure"
+        "name": "Unités de mesure",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "couleurs",
-        "name": "Couleurs"
+        "name": "Couleurs",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "preprocesseurs",
-        "name": "Préprocesseurs"
+        "name": "Préprocesseurs",
+        "authors": [
+          "Antoine Béland"
+        ]
       }
     ]
   },
@@ -53,27 +80,37 @@
     "articles": [
       {
         "id": "fonctions",
-        "name": "Fonctions"
+        "name": "Fonctions",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "manipulation-tableaux",
-        "name": "Manipulation des tableaux"
+        "name": "Manipulation des tableaux",
+        "authors": [
+          "Antoine Béland"
+        ]
       },
       {
         "id": "asynchronisme",
-        "name": "Asynchronisme"
+        "name": "Asynchronisme",
+        "isVisible": false
       },
       {
         "id": "this-object-prototype",
-        "name": "Contexte <em>this</em> et <em>object prototype</em>"
+        "name": "Contexte <em>this</em> et <em>object prototype</em>",
+        "isVisible": false
       },
       {
         "id": "es6",
-        "name": "Fonctionnalités ES6"
+        "name": "Fonctionnalités ES6",
+        "isVisible": false
       },
       {
         "id": "organisation-code",
-        "name": "Organisation du code"
+        "name": "Organisation du code",
+        "isVisible": false
       }
     ]
   }

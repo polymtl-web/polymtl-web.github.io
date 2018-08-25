@@ -25,6 +25,8 @@ export function getArticleTypeFromString(type: string): ArticleType | null {
 export interface Article {
   id: string;
   name: string;
+  authors?: string[];
+  isVisible?: boolean;
 }
 
 /**

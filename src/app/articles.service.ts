@@ -19,7 +19,11 @@ export class ArticlesService {
       const value = ArticleType[key];
       this.types[value] = this.http.get(`./articles/${value}/${value}.json`)
         .toPromise()
-        .then(response => response as Category[]);
+        .then(response => {
+          const categories = response as Category[];
+          categories.forEach(c => c.articles = c.articles.filter(a => a.isVisible === undefined || a.isVisible));
+          return categories;
+        });
     });
   }
 

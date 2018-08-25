@@ -2,7 +2,20 @@
 
 L'utilisation d'identifiants (`#id`) est **à éviter** en CSS. En effet, vous ne devez pas utiliser d'identifiants 
 si vous stylisez des éléments qui pourront être réutilisés sur une même page, puisque vous aurez à dupliquer inutilement 
-du code CSS tout en compliquant inutilement sa maintenance. Dans ce cas, vous devriez privilégier l'utilisation de [classes](./guide/css/classes).
+du code CSS tout en compliquant inutilement sa maintenance. Dans ce cas, vous devriez privilégier l'utilisation de 
+[sélecteurs d'éléments](./guide/css/elements) ou de [classes](./guide/css/classes).
+
+<section class="panel warning">
+  <div class="title">
+    <h2><i class="fa fa-exclamation-circle"></i> Notez bien</h2>
+  </div>
+  <div class="content">
+  <p>
+    Il est à noter que le nom d'un identifiant doit être unique dans un document. Ainsi, vous pouvez utiliser un nom 
+    d'identifiant particulier que sur un élément de votre code HTML.
+  </p>
+  </div>
+</section>
 
 <section class="panel wrong">
   <div class="title">
@@ -10,7 +23,7 @@ du code CSS tout en compliquant inutilement sa maintenance. Dans ce cas, vous de
   </div>
   <div class="content">
     <p>Cet exemple illustre une mauvaise utilisation des identifiants en CSS puisqu'il y a du code dupliqué inutilement. Il aurait été préférable
-    d'utiliser une classe à la place.</p>
+    d'utiliser un sélecteur d'éléments ou une classe à la place.</p>
     <div class="row">
       <div class="col">
         <pre><code class="language-css">#p1 { font-weight: bold; }

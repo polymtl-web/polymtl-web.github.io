@@ -1,6 +1,6 @@
 # Méthodes HTTP
 
-Le standard HTTP/1.1 définit plusieurs méthodes (parfois appelés verbes) pour définir les différentes actions qui peuvent être prises avec des requêtes HTTP. Il y a 9 méthodes différentes, mais nous alons nous concentrer sur les 4 principaux : **GET,POST,PUT,DELETE**. Vous pouvez trouver la liste complète [ici](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+Le standard HTTP/1.1 définit plusieurs méthodes (parfois appelés verbes) pour définir les différentes actions qui peuvent être prises avec des requêtes HTTP. Il y a 9 méthodes différentes, mais nous alons nous concentrer sur les 4 principaux : **GET, POST, PUT, DELETE**. Vous pouvez trouver la liste complète [ici](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 
 ## GET
 
@@ -19,6 +19,9 @@ La méthode **PUT** permet de remplacer ou modifier une ou plusieurs données. L
 La méthode **DELETE** permet de supprimmer une ou plusieurs ressources spécifiées par la requête.
 
 
+# HTTP appliqué
+
+
 Pour mieux comprendre l'utilisation des différentes méthodes HTTP, vous pouvez vous baser sur l'exemple suivant. Dans cette application Web simple, nous avons une liste de cours qui sont représentés par leurs _sigle_ et leur nombre de _credits_. 
 
 Il y a deux méthodes **GET** qui permettent d'avoir la totalité des cours sur le serveur ou un cours en particulier. 
@@ -28,6 +31,7 @@ La méthode **POST** permet de créer un nouveau cours en spécifiant son _sigle
 La méthode **PUT** permet de modifier le nombre de crédits d'un cours en particulier et s'assure que le cours à modifier existe dans la liste. 
 
 Finalement, **DELETE** permet de supprimer un cours et notife l'utilisateur si jamais la suppression n'a pas été effectuée.
+
 
 ```js
 var express = require('express')

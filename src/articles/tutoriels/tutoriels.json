@@ -90,6 +90,13 @@
         "authors": [
           "Nikolay Radoev"
         ]
+      },
+      {
+        "id" : "mongo-applique",
+        "name" :"MongDB appliqué",
+        "authors" : [
+          "Nikolay Radoev"
+        ]
       }
     ]
   }

@@ -29,5 +29,5 @@ du CSS, il existe une version appelée [SCSS](http://sass-lang.com/documentation
 qui conserve la syntaxe que vous connaissez. 
 
 Pour vous familiariser avec le SCSS, vous pouvez consulter ce [guide rapide](https://sass-lang.com/guide) 
-qui expose les fonctionnalités principales du langage. Pour transpiler votre code en CSS, vous pouv ez utiliser
+qui expose les fonctionnalités principales du langage. Pour transpiler votre code en CSS, vous pouvez utiliser
 [ce paquet](https://www.npmjs.com/package/sass) sur npm.

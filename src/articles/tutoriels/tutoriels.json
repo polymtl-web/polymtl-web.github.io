@@ -78,15 +78,8 @@
     "name" : "MongoDB",
     "articles": [
       {
-        "id" : "mongodb-intro",
+        "id" : "mongoDB",
         "name" : "Introduction",
-        "authors": [
-          "Nikolay Radoev"
-        ]
-      },
-      {
-        "id" : "mongodb-utilisation",
-        "name" : "Utilisation",
         "authors": [
           "Nikolay Radoev"
         ]
@@ -94,6 +87,13 @@
       {
         "id" : "mlab",
         "name" : "Mlab",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id" : "mongodb-utilisation",
+        "name" : "Utilisation",
         "authors": [
           "Nikolay Radoev"
         ]

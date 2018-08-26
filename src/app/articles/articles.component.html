@@ -22,10 +22,10 @@
       </a>
       <p *ngIf="selectedArticle && selectedArticle.authors">
         Auteur<span *ngIf="selectedArticle.authors.length > 1">s</span>:&nbsp;
-        <span *ngFor="let author of selectedArticle.authors; let i = index">
-        {{ author }}<span *ngIf="i < selectedArticle.authors.length - 2">, </span><span
+        <a *ngFor="let author of selectedArticle.authors; let i = index" href="https://github.com/{{ author.account }}">
+        {{ author.name }}<span *ngIf="i < selectedArticle.authors.length - 2">, </span><span
           *ngIf="i === selectedArticle.authors.length - 2"> et </span>
-      </span>
+        </a>
       </p>
     </footer>
   </div>

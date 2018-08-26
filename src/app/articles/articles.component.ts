@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {getArticleTypeFromString, Article, ArticleType, Category} from '../article';
+import { getArticleTypeFromString, Article, ArticleType, Category } from '../article';
 import { ArticlesService } from '../articles.service';
-import {WindowScrollingService} from '../window-scrolling.service';
+import { WindowScrollingService } from '../window-scrolling.service';
 
 /**
  * Defines the component responsible to display the tutorials or guide pages.

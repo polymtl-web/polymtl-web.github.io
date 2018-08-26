@@ -14,9 +14,10 @@ import { NgxMdModule } from 'ngx-md';
 import { AppComponent } from './app.component';
 import { ArticlesService } from './articles.service';
 import { ArticlesComponent } from './articles/articles.component';
+import { AuthorsService } from './authors.service';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {WindowScrollingService} from './window-scrolling.service';
+import { WindowScrollingService } from './window-scrolling.service';
 
 /**
  * The routes of the application.
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
       { enableTracing: false }
     )
   ],
-  providers: [ ArticlesService, WindowScrollingService ],
+  providers: [ AuthorsService, ArticlesService, WindowScrollingService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

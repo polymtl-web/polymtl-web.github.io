@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ArticleType, Category } from './article';
+import { Author } from './author';
+import { AuthorsService } from './authors.service';
 
 /**
  * Defines the service responsible to retrieve the articles information.
@@ -12,18 +14,29 @@ export class ArticlesService {
   /**
    * Initializes a new instance of the ArticlesService class.
    *
-   * @param {HttpClient} http   The HTTP client to use.
+   * @param {HttpClient} http                 The HTTP client to use.
+   * @param {AuthorsService} authorsService   The authors service to use.
    */
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, authorsService: AuthorsService) {
     Object.keys(ArticleType).forEach(key => {
       const value = ArticleType[key];
-      this.types[value] = this.http.get(`./articles/${value}/${value}.json`)
-        .toPromise()
-        .then(response => {
-          const categories = response as Category[];
-          categories.forEach(c => c.articles = c.articles.filter(a => a.isVisible === undefined || a.isVisible));
-          return categories;
+      this.types[value] = Promise.all([
+        this.http.get(`./articles/${value}/${value}.json`).toPromise(),
+        authorsService.getAuthors()
+      ])
+      .then(([response, authorsRetrieved]) => {
+        const categories = response as Category[];
+        const authors = authorsRetrieved as Author[];
+
+        categories.forEach(category => {
+          category.articles = category.articles.filter(article => article.isVisible === undefined || article.isVisible)
+            .map(article => {
+              article.authors = (article.authors as string[]).map(name => authors.find(author => author.name === name));
+              return article;
+            });
         });
+        return categories;
+      });
     });
   }
 

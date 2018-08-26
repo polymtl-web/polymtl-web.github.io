@@ -76,10 +76,17 @@
   {
     "id" : "mongoDB",
     "name" : "MongoDB",
-    "articles" :[
+    "articles": [
       {
-        "id" : "mongoDB",
-        "name" : "Introduction à MongoDB",
+        "id" : "mongodb-intro",
+        "name" : "Introduction",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id" : "mongodb-utilisation",
+        "name" : "Utilisation",
         "authors": [
           "Nikolay Radoev"
         ]

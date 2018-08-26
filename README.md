@@ -69,7 +69,9 @@ un élément dans la liste `articles` correspondant à cette même catégorie en
 ```
 
 **Assurez-vous que l'identifiant (`id`) spécifié respecte le format _[kebab-case](http://wiki.c2.com/?KebabCase)_**. De 
-plus, validez que le nom de l'identifiant est en français, puisqu'il apparaîtra dans l'URL du site web.
+plus, validez que le nom de l'identifiant est en français, puisqu'il apparaîtra dans l'URL du site web. Enfin, veuillez
+vous assurer que le ou les noms des auteurs spécifiés sont listés dans le fichier `authors.json` se trouvant dans le dossier
+`/src/articles`.
 
 Il est également possible de spécifier le paramètre `isVisible` sur un article. Ce paramètre indique la visibilité de
 l'article sur le site web. Par défaut, cette valeur est à `true`.

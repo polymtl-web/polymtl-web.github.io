@@ -2,7 +2,7 @@
 
 Ce site web sert de référence pour les cours [LOG2990](http://www.polymtl.ca/etudes/cours/projet-de-logiciel-dapplication-web) 
 et [LOG4420](http://www.polymtl.ca/etudes/cours/conception-de-sites-web-dynam-et-transact) à Polytechnique Montréal. 
-Il a été écrit en TypeScript et utilise le _framework_ [Angular 6](https://angular.io/). Le site web est 
+Il a été écrit en TypeScript et utilise le _framework_ [Angular 6](https://angular.io/). Le site est 
 actuellement hébergé à l'URL suivante: https://polymtl-web.github.io/. Pour contribuer à ce site, 
 veuillez suivre les instructions suivantes.
 
@@ -36,9 +36,9 @@ npm start
 Une fois le serveur démarré, l'application est accessible au `http://localhost:4200/`.
 
 ## Contribution
-Avant de pouvoir contribuer au site web, assurez-vous de récupérer le code source du site web qui se trouve sur la 
-branche `develop`. Pour contribuer au contenu du site web, veuillez vous référer à l'une des deux sous-sections 
-suivantes. L'ensemble des articles du site sont écrits au format Markdown. Pour plus d'informations sur ce format, vous 
+Avant de pouvoir contribuer au site web, assurez-vous de récupérer le code source de l'application qui se trouve sur la 
+branche `develop`. Pour contribuer au contenu du site, veuillez vous référer à l'une des deux sous-sections 
+suivantes. L'ensemble des articles du site web sont écrits au format Markdown. Pour plus d'informations sur ce format, vous 
 pouvez consulter ce [lien](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Tutoriels
@@ -53,12 +53,16 @@ un élément dans la liste `articles` correspondant à cette même catégorie en
 ```json
 {
   "id": "Le nom du fichier .md (sans l'extension .md)",
-  "name": "Le nom réel de l'article"
+  "name": "Le nom réel de l'article",
+  "authors": [ "Le nom du premier auteur", "..." ]
 }
 ```
 
-Assurez-vous que l'identifiant (`id`) spécifié respecte le format _[kebab-case](http://wiki.c2.com/?KebabCase)_. De plus,
-validez que le nom de l'identifiant est en français, puisqu'il apparaîtra dans l'URL du site web.
+**Assurez-vous que l'identifiant (`id`) spécifié respecte le format _[kebab-case](http://wiki.c2.com/?KebabCase)_**. De 
+plus, validez que le nom de l'identifiant est en français, puisqu'il apparaîtra dans l'URL du site web.
+
+Il est également possible de spécifier le paramètre `isVisible` sur un article. Ce paramètre indique la visibilité de
+l'article sur le site web. Par défaut, cette valeur est à `true`.
 
 Une fois cette dernière étape effectuée, le tutoriel que vous avez créé devrait être disponible sur le site web.
 

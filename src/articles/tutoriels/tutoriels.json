@@ -85,13 +85,6 @@
         ]
       },
       {
-        "id" : "mongodb-utilisation",
-        "name" : "Utilisation",
-        "authors": [
-          "Nikolay Radoev"
-        ]
-      },
-      {
         "id" : "mlab",
         "name" : "Mlab",
         "authors": [
@@ -99,9 +92,9 @@
         ]
       },
       {
-        "id" : "mongo-applique",
-        "name" :"MongDB appliqué",
-        "authors" : [
+        "id" : "mongodb-utilisation",
+        "name" : "Utilisation",
+        "authors": [
           "Nikolay Radoev"
         ]
       }

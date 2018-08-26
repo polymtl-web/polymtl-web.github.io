@@ -1,9 +1,10 @@
 # MongoDB appliqué
 
-Maintenant que vous c'est quoi la base de **MongoDB** et comment se connecter à votre base de données, il est temps d'apprends comment ajouter et lire l'information sur la base de données. On vous recommande fortement de lire la section sur **Mlab** pour savoir comment se connecter. 
+Maintenant que vous savez c'est quoi la base de **MongoDB** et comment se connecter à votre base de données, il est temps d'apprends comment ajouter et lire l'information sur la base de données. On vous recommande fortement de lire la section sur **Mlab** pour savoir comment se connecter. 
 
 Pour pouvoir intéragir avec la base de données, il faudrait maintenir une connection avec. La fonction **connect** offre la possibilité d'avoir une fonction _callback_ qui est executé dès que la connection est établie. Si vous voulez accéder à vos données, c'est à l'intérieur de cette fonction que vous devez mettre votre code. Lorsque vous terminez vos manipulations, il ne faut pas oublier de fermer la connection avec la fonction **close**.
 
+Note importante : **MongoDB** et son module Node évoluent rapidement et font souvent des changements majeurs qui brisent la rétrocomptabilité. Ce guide a été crée avec la version 3.1 du module Node. Si vous cherchez des exemples ou des clarifications sur l'Internet, assurez vous de tenir compte de votre version ainsi que la version donnée dans les exemples.
 
 ## Ajouter des documents
 
@@ -25,7 +26,7 @@ var DB_PORT = "dbPort";
 var DB_URL = "mongodb://" + DB_USER + ":" + DB_PASSWORD + "@" + DB_HOST + ":" + DB_PORT + "/" + DB_DB;
 
 MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
-	db = client.db(DB_DB);
+	var db = client.db(DB_DB);
 	var cours = db.collection("cours");
 	
 	var log2990 = { sigle : "LOG2990", credits : 3};
@@ -79,7 +80,7 @@ Exemple : **find( $or : [ { sigle : /^LOG/ }, { credits : {$lt : 4} } ] )** qui 
 Plusieurs opérateurs de comparaison peuvent être utilisés ensemble ou de manière imbriquée. Par exemple, si on veut trouver tout les cours qui ont plus que 2 crédits _ET_ moins que 5 crédits, on peut utiliser la requête suivante :
 ```js
 MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
-	db = client.db(DB_DB);
+	var db = client.db(DB_DB);
 	var cours = db.collection("cours");
 	cours.find( {credits : {$gt : 2, $lt : 5} }).toArray((err,res)=>{
 		console.log(res)
@@ -98,7 +99,7 @@ Voici donc un exemple de comment obtenir seulement tous les sigles de cours de l
 
 ```js
 MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
-	db = client.db(DB_DB);
+	var db = client.db(DB_DB);
 	var cours = db.collection("cours");
 	cours.find({}, {projection :{ sigle: 1, _id : 0}}).toArray((err,res)=>{
 		console.log(res)
@@ -107,3 +108,92 @@ MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
 	client.close();
 })
 ```
+
+### Trier les résultats
+
+Après avoir obtenu les résultats de la recherche, vous pouvez trier les résultats de manière descendante ou ascendante à l'aide de la fonction **sort(criteria)** ou **criteria** est un objet qui définit le champ du document surlequel le tri s'effectue et le type de tri. Le type de tri est décidé par un paramètre qui est de 1 pour un ordre **ascendant** et -1 pour un ordre **descendant**. 
+
+Voici donc comment on peut trier nos cours en ordre descendant selon leur nombre de crédits :
+
+```js
+MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
+	var db = client.db(DB_DB);
+    var cours = db.collection("cours");
+    var tri = { credits : -1}
+	cours.find({}).sort(tri).toArray((err,res)=>{
+		console.log(res)
+	});
+	
+	client.close();
+})
+```
+
+La méthode **sort** peut être enchaînée plusieurs fois et l'ordre de tri se fait de gauche à droit. Par exemple, on pourrait trier nos cours par leur nombre de crédit et en ordre alphabétique ensuite en faisant :
+
+```js
+cours.find({}).sort( {credits : -1}).sort( {sigle : 1})
+```
+
+## Mettre à jour des documents
+
+Pour modifier des documents dans **MongoDB**, il existe deux fonctions : **updateOne(query, newValues, callback)** et **udapteMany(query, newValues, callback)**. Comme leur noms l'indiquent, la première fonction permet de modifier un seul élément et la deuxième permet de modifier tout les documents visés d'un seul coup.
+
+Le paramètre **query** permet de spécifier quel(s) document(s) modifier sous la forme d'une requête. La manière de créer la requête est la même que dans la section **Retrouver des documents**. 
+
+Le paramètre **newValues** spécifie les nouvelles valeurs après la modification. L'objet fourni contient le mot clé **$set** vant de spécifier les changements. Par exemple, pour change le nombre de crédits du cours **LOG2990** à **8** crédits, voici la fonction à utiliser :
+
+```js
+MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
+	var db = client.db(DB_DB);
+	var cours = db.collection("cours");
+	var query = { sigle : "LOG2990"}
+	var nouveauxCredits = {$set : {credits : 8}}
+	cours.updateOne(query, nouveauxCredits,function(err,res){
+		if (err) throw err;
+	})
+	
+	client.close();
+})
+```
+
+Outre que **$set**, vous pouvez utiliser d'autres opérateurs pour modifier un ou plusieurs documents :
+- **$inc** : incrémente la valeur du champ par le paramètre fourni
+- **$mul** : multiplie la valeur du champ par le paramètre fourni
+- **$rename** : renome le champ
+- **$unset** : retire le champ spécifié du document
+
+Pour les tableaux, les opérateurs suivant sont disponibles :
+- **$pop** : enlève le premier ou le dernir élément d'un tableau. Pour spécifier lequel, on utilise **-1** et **1** pour le premier et le dernier respectivement. Exemple : **{ $pop : { monTableau: -1}}** enlève le premier élément du tableau **monTableau**.
+- **$push** : ajoute un élément à la fin du tableau
+- **$pull** : enlève tous les éléments du tableau qui correspondent aux critères fournies. Exemple :  **{ $pull : { monTableau: 5}}** enlève tous éléments qui ont la valeur **5** du tableau **monTableau**.
+
+Les fonctions de mise à jour permettent aussi de créer le document s'il n'est pas trouvé par la requête initiale. Por faire ceci, il faut inclure l'option **{upsert : true}** comme paramètre, entre les nouvelles valeurs et la fonction de _callback_. Le mot clé **$setOnInsert** peut être utilisé et va s'exécuter seulement si le document a été crée après un échec de le trouver.
+
+
+## Supprimer des documents
+
+Pour supprimer des documents dans **MongoDB**, il existe deux fonctions : **deleteOne(query, callback)** et **deleteMany(query,callback)**. Comme leur noms l'indiquent, la première fonction permet de supprimer un seul élément et la deuxième permet de supprimer tout les documents visés d'un seul coup.
+
+Le paramètre **query** permet de spécifier quel(s) document(s) modifier sous la forme d'une requête. La manière de créer la requête est la même que dans la section **Retrouver des documents**. 
+
+Voici donc un exemple pratique de l'utilisation de la fonction **deleteOne** : 
+
+```js
+MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
+	var db = client.db(DB_DB);
+	var cours = db.collection("cours");
+	var query = { sigle : "LOG2990"}
+	var nouveauxCredits = {$set : {credits : 8}}
+	cours.deleteOne(query, function(err,res){
+        if (err) throw err;
+        console.log("un document supprimé");
+	})
+	client.close();
+})
+```
+
+Si vous voulez supprimer tout une collection au complet, vous pouvez appeler la fonction **drop** sur la collection. Cette fonction prend seulement une fonction de _callback_ en paramètre et la fonction _callback_ prend l'erreur de l'exécution ainsi que le résultat. Le résultat retourne **true** si la collection a été supprimée et **false** sinon.
+
+# Exercice
+
+Maintenant que vous connaissez mieux **MongoDB**, vous pouvez le mettre en application. Dans la section **Méthodes HTTP**, le concept de _CRUD_ a été introduit à travers un exemple complet. Dans cet exemple, un simple tableau d'objet a été utilisé pour garder l'information. Il est maintenant à votre tour de reprendre cet exemple et transférer l'information sur une base de données **MongoDB** ainsi que modifier le code pour intégrer l'intéraction avec votre base de données et votre serveur.

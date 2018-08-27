@@ -1,5 +1,5 @@
 # Types
-Le sélecteur de type en CSS permet d'appliquer un style particulier sur l'élément du même type se trouvant dans le code 
+Le sélecteur de type en CSS permet d'appliquer un style particulier sur les éléments du même type se trouvant dans le code 
 HTML. Ce sélecteur est donc très fréquemment utilisé pour définir le style à appliquer sur l'ensemble des éléments d'un 
 type précis.
 

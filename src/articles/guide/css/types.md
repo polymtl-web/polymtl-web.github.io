@@ -155,7 +155,7 @@ alors une classe CSS.
   <ul>
     <li><a href="#">Accueil</a></li>
     <li><a href="#">Tutoriels</a></li>
-    <li><a href="#">Guide</a></li><!-- ⇐ Élément actif du site web. On doit utiliser un classe CSS pour le distinguer. --> 
+    <li><a href="#">Guide</a></li><!-- ⇐ Élément actif du site web. On doit utiliser un classe CSS! --> 
   </ul>
 </nav>
 ```

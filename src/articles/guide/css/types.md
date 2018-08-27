@@ -36,6 +36,13 @@ sélecteur est appropriée, vous pourrez alors utiliser une classe CSS.
     sélections plus pointues, afin de pouvoir utiliser la sélection de types et éviter de définir inutilement des 
     classes.
   </p>
+<pre>
+<code class="language-css">/&#42; Exemples &#42;/
+main > p {}
+main p:first-child {}
+main p:last-child {}
+main p + p {}</code>
+</pre>
   </div>
 </section>
 
@@ -112,7 +119,7 @@ d'autres éléments de la page.
 &nbsp;&nbsp;left: 0;
 &nbsp;&nbsp;width: 100%;
 &nbsp;&nbsp;padding: 10px;
-&nbsp;&nbsp;background-color: blue;
+&nbsp;&nbsp;background-color: #333;
 }
 
 header > h1 {

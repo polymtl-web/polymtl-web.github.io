@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ArticlesComponent} from './articles/articles.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 /**
  * Defines the main component of the application.

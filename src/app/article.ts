@@ -1,3 +1,5 @@
+import { Author } from './author';
+
 /**
  * Defines the available article types.
  */
@@ -25,6 +27,8 @@ export function getArticleTypeFromString(type: string): ArticleType | null {
 export interface Article {
   id: string;
   name: string;
+  authors?: string[] | Author[];
+  isVisible?: boolean;
 }
 
 /**

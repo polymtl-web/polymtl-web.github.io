@@ -6,12 +6,19 @@
   min-height: inherit;
 }
 
-#article-options {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 1em 0;
   border-top: 1px solid $gray;
+
+  p {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.15em;
+    text-align: left;
+  }
 }
 
 .main {

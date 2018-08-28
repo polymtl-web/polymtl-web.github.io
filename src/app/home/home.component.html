@@ -22,38 +22,10 @@
       <h2>Collaborateurs</h2>
       <p>Ce site web a été réalisé en collaboration avec les personnes suivantes:</p>
       <ul class="authors">
-        <li class="author">
-          <a href="https://github.com/antoinebeland">
-            <img alt="Antoine Béland" src="https://avatars.githubusercontent.com/antoinebeland"><br>
-            Antoine Béland
-          </a>
-        </li>
-        <li class="author">
-          <a href="https://github.com/Dyc0de">
-            <img alt="Dylan Farvaque" src="https://avatars.githubusercontent.com/Dyc0de"><br>
-            Dylan Farvaque
-          </a>
-        </li>
-        <li class="author">
-          <a href="https://github.com/mchlggnn">
-            <img alt="Michel Gagnon" src="https://avatars.githubusercontent.com/mchlggnn"><br>
-            Michel Gagnon
-          </a>
-        </li>
-        <li class="author">
-          <img alt="François Guibault" src="https://avatars.githubusercontent.com/%3Cusername%3E"><br>
-          François Guibault
-        </li>
-        <li class="author">
-          <a href="https://github.com/koslambrou">
-            <img alt="Konstantinos Lambrou-Latreille" src="https://avatars.githubusercontent.com/koslambrou"><br>
-            Konstantinos Lambrou-Latreille
-          </a>
-        </li>
-        <li class="author">
-          <a href="https://github.com/Bodheem">
-            <img alt="Nokolay Radoev" src="https://avatars.githubusercontent.com/Bodheem"><br>
-            Nikolay Radoev
+        <li class="author" *ngFor="let author of authors">
+          <a href="https://github.com/{{ author.account }}">
+            <img alt="{{ author.name }}" src="https://avatars.githubusercontent.com/{{ author.account }}"><br>
+            {{ author.name }}
           </a>
         </li>
       </ul>

@@ -5,11 +5,17 @@
     "articles":[
      {
        "id" : "mean",
-       "name" : "Introduction à MEAN"
+       "name" : "Introduction à MEAN",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      },
      {
        "id" : "crud",
-       "name" : "Méthodes HTTP"
+       "name" : "Méthodes HTTP",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      }
     ]
   },
@@ -19,11 +25,17 @@
     "articles": [
       {
         "id": "node",
-        "name": "Node.js"
+        "name": "Node.js",
+        "authors": [
+          "Nikolay Radoev"
+        ]
       },
       {
         "id": "file-system",
-        "name" : "Système de fichiers"
+        "name" : "Système de fichiers",
+        "authors": [
+          "Nikolay Radoev"
+        ]
       }
     ]
   },
@@ -33,33 +45,58 @@
     "articles" :[
      {
        "id" : "express",
-       "name" : "Express"
+       "name" : "Express",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      },
      {
        "id" : "routing",
-       "name" : "Routing"
+       "name" : "Routing",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      },
      {
        "id" : "middleware",
-       "name" : "Middleware"
+       "name" : "Middleware",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      },
      {
        "id" : "templating",
-       "name" : "Templating"
+       "name" : "Templating",
+       "authors": [
+         "Nikolay Radoev"
+       ]
      }
     ]
   },
   {
-    "id" : "mongoose",
-    "name" : "Mongoose",
-    "articles" :[
+    "id" : "mongoDB",
+    "name" : "MongoDB",
+    "articles": [
       {
-        "id" : "mongoose",
-        "name" : "Introduction à Mongoose"
+        "id" : "mongoDB",
+        "name" : "Introduction",
+        "authors": [
+          "Nikolay Radoev"
+        ]
       },
       {
         "id" : "mlab",
-        "name" : "Mlab"
+        "name" : "Mlab",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id" : "mongodb-utilisation",
+        "name" : "Utilisation",
+        "authors": [
+          "Nikolay Radoev"
+        ]
       }
     ]
   },
@@ -81,5 +118,4 @@
       }
     ]
   }
-
 ]

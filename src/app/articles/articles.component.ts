@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getArticleTypeFromString, ArticleType, Category } from '../article';
+import { getArticleTypeFromString, Article, ArticleType, Category } from '../article';
 import { ArticlesService } from '../articles.service';
-import {WindowScrollingService} from '../window-scrolling.service';
+import { WindowScrollingService } from '../window-scrolling.service';
 
 /**
  * Defines the component responsible to display the tutorials or guide pages.
@@ -16,6 +16,7 @@ export class ArticlesComponent implements OnInit {
   categories: Category[];
   isSidebarVisible = false;
   selectedArticleId: string;
+  selectedArticle: Article;
   selectedCategoryId: string;
   selectedType: ArticleType;
 
@@ -35,6 +36,7 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.selectedArticleId = params.get('article') || undefined;
+      this.selectedArticle = undefined;
       this.selectedCategoryId = params.get('category') || undefined;
       this.selectedType = getArticleTypeFromString(this.route.snapshot.url[0].path);
 
@@ -50,6 +52,7 @@ export class ArticlesComponent implements OnInit {
         // If there is no article specified, use default.
         if (!this.selectedCategoryId && !this.selectedArticleId) {
           this.selectedArticleId = this.categories[0].articles[0].id;
+          this.selectedArticle = this.categories[0].articles[0];
           this.selectedCategoryId = this.categories[0].id;
         } else {
           const category = categories.find(c => c.id === this.selectedCategoryId);
@@ -58,10 +61,13 @@ export class ArticlesComponent implements OnInit {
           if (!this.selectedCategoryId || !category) {
             this.selectedCategoryId = null;
           }
+
           // If the specified article is invalid.
-          if (!this.selectedArticleId || category &&
-            !category.articles.find(a => a.id === this.selectedArticleId)) {
+          const article = category.articles.find(a => a.id === this.selectedArticleId);
+          if (!this.selectedArticleId || category && !article) {
             this.selectedArticleId = null;
+          } else {
+            this.selectedArticle = article;
           }
         }
       });

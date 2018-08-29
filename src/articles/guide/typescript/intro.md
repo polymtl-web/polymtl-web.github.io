@@ -1,4 +1,6 @@
 
+# Préambule
+
 Typescrit est un langage developper et maintenu par Miscrosoft. C’est un sur-esnemble du Javascript ce qui veut dire que tout ce qui est écrit en Javascript peut être utilisé en Typescript. Aussi tout code en Ts est transcompilé en Js avant d’être interprété.
 
 Cela veut aussi dire que beaucoup de notions sont similaires entre le Js et le Ts. Il est donc recommandé d’avoir un minimum de base en Js. 

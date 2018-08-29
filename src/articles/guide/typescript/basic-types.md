@@ -111,8 +111,8 @@ function aNumberOrAString(returnANumber: boolean) : number | string {
 
 ## Null et Undefined
 
-Les types `null` et `undefined` sont des sous types de tous les types de base, cependant, ils sont aussi la source de beaucoup d'erreur de programmation. C'est pour cela qu'il est recommander d'utiliser le flag de compilation --strictNullChecks qui rend ces types seulement assignale au type `void` (Tout simplement pour pouvoir ``return`` dans une fonction ``void``). Ainsi, si une fonction doit se préparer a checker pour un null ou un undefined, il faudra utiliser le type ``union`` qui va clairement exposer que la méthode à besoin de faire attention à un ou plusieurs de ses paramêtres. Il en va de même pour son type de retour, qui pourrait, par exemple, être `string | null | undefined`
+Les types `null` et `undefined` sont des sous types de tous les types de base, cependant, ils sont aussi la source de beaucoup d'erreur de programmation. C'est pour cela qu'il est recommander d'utiliser le flag de compilation `--strictNullChecks` qui rend ces types seulement assignale au type `void` (Tout simplement pour pouvoir ``return`` dans une fonction ``void``). Ainsi, si une fonction doit se préparer a checker pour un null ou un undefined, il faudra utiliser le type ``union`` qui va clairement exposer que la méthode à besoin de faire attention à un ou plusieurs de ses paramêtres. Il en va de même pour son type de retour, qui pourrait, par exemple, être `string | null | undefined`
 
 ## Conclusion
 
-Héritant du Js, le Ts est un langage assez complet et flexible sur les types. Il existe d'autres types avancés qui peuvent être utiles dans certaines situations leur documentation est sur le site officiel de [`TypeScript`](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+Héritant du Js, le Ts est un langage assez complet et flexible sur les types. Il existe d'autres types avancés qui peuvent être utiles dans certaines situations leur documentation est sur le site officiel de [`TypeScript`] (https://www.typescriptlang.org/docs/handbook/advanced-types.html) (ressource en anglais).

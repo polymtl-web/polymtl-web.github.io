@@ -111,5 +111,39 @@
         "isVisible": false
       }
     ]
+  },
+  {
+    "id": "typescript",
+    "name": "TypesScript",
+    "articles":[
+      {
+        "id": "intro",
+        "name": "Préambule",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "basic-types",
+        "name": "Types de base",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+          "id": "generic",
+          "name": "Type Génériques",
+          "authors": [
+              "Dylan Farvacque"
+            ]
+        },
+        {
+        "id": "interface",
+        "name": "Interfaces",
+        "authors": [
+            "Dylan Farvacque"
+        ]
+        }
+    ]
   }
 ]

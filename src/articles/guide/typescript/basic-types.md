@@ -115,4 +115,4 @@ Les types `null` et `undefined` sont des sous types de tous les types de base, c
 
 ## Conclusion
 
-Héritant du Js, le Ts est un langage assez complet et flexible sur les types. Il existe d'autres types avancés qui peuvent être utiles dans certaines situations leur documentation est sur le site officiel de [`TypeScript`] (https://www.typescriptlang.org/docs/handbook/advanced-types.html) (ressource en anglais).
+Héritant du Js, leTypeScriptest un langage assez complet et flexible sur les types. Il existe d'autres types avancés qui peuvent être utiles dans certaines situations leur documentation est sur le site officiel de [`TypeScript`] (https://www.typescriptlang.org/docs/handbook/advanced-types.html) (ressource en anglais).

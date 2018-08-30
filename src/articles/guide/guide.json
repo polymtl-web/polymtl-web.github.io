@@ -1,9 +1,7 @@
-[
-  {
+[{
     "id": "html",
     "name": "HTML",
-    "articles": [
-      {
+    "articles": [{
         "id": "balises-semantiques",
         "name": "Balises sémantiques",
         "authors": [
@@ -29,8 +27,7 @@
   {
     "id": "css",
     "name": "CSS",
-    "articles": [
-      {
+    "articles": [{
         "id": "types",
         "name": "Types",
         "authors": [
@@ -77,8 +74,7 @@
   {
     "id": "js",
     "name": "JavaScript",
-    "articles": [
-      {
+    "articles": [{
         "id": "fonctions",
         "name": "Fonctions",
         "isVisible": false
@@ -114,9 +110,8 @@
   },
   {
     "id": "typescript",
-    "name": "TypesScript",
-    "articles":[
-      {
+    "name": "TypeScript",
+    "articles": [{
         "id": "intro",
         "name": "Préambule",
         "authors": [
@@ -131,19 +126,59 @@
         ]
       },
       {
-          "id": "generic",
-          "name": "Type Générique",
-          "authors": [
-              "Dylan Farvacque"
-            ]
-        },
-        {
+        "id": "generic",
+        "name": "Type Générique",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
         "id": "interface",
         "name": "Interfaces",
         "authors": [
-            "Dylan Farvacque"
+          "Dylan Farvacque"
         ]
-        }
+      }
+    ]
+  },
+  {
+    "id": "angular",
+    "name": "Angular 6",
+    "articles": [{
+        "id": "intro",
+        "name": "Introduction",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "routing",
+        "name": "Navigation",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "events",
+        "name": "Les Évenements",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "communication",
+        "name": "Communication",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "test",
+        "name": "Tester une application",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      }
     ]
   }
 ]

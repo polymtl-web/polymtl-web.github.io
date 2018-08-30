@@ -1,7 +1,7 @@
 # Interfaces
 
-Étant donné que ts me l accent sur la verification des types, la notion d'interface a été introduit pour renforcer cet aspect.
-Une Interface en ts peut être utilisé dans plusieurs scénarii. 
+Étant donné queTypeScriptme l accent sur la verification des types, la notion d'interface a été introduit pour renforcer cet aspect.
+Une Interface enTypeScriptpeut être utilisé dans plusieurs scénarii. 
 
 ## Interface de classe
 

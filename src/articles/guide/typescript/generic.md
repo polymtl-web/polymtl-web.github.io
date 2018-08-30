@@ -1,6 +1,6 @@
-# Types Génériques
+# Type Générique
 
- Un des défis du développement logiciel est d'avoir un code source facilement réutilisable. Les types génériques sont un des outils permettants cela. 
+ Un des défis du développement logiciel est d'avoir un code source facilement réutilisable. Le type générique est un des outils permettants cela. 
  Une des meilleure façon de les introduire est de faire une petite mise en situation : 
 
  Notre objectif est tout simple : créer une fonction qui fonctionne comme la commende linux `echo`.
@@ -31,7 +31,7 @@ function identity<T>(arg: T): T {
 let output: string = identity<string>("myString"); 
 ```
 
-Et voilà le type générique ! Nous utilisons le type générique ``T`` pour dire que l'argument de la fonction et le type de retour est le même ! 
+Et voilà le type générique ! Nous utilisons le type générique ``T`` pour dire que l'argument de la fonction ainsi le type de retour est le même ! 
 
 Pour plus d'information sur le type générique, voila la [documentation](https://www.typescriptlang.org/docs/handbook/generics.html) (ressource en anglais).
 

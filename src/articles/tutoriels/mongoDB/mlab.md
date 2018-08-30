@@ -12,8 +12,7 @@ Maintenant, il faut créer une base de données et vous pouvez le faire à trave
 
 ![mLab deployment](./../../../assets/images/mLabDB.PNG)
 
-Si vous cliquer sur le nom de votre base de données, vous devez voir l'interface de gestion de la base avec les onglets _Collections, Users, Stats, Backups_ et _Tools_ ainsi qu'un premier encadré avec l'URI à utiliser pour se connecter.
-
+Si vous cliquez sur le nom de votre base de données, vous devez voir l'interface de gestion de la base avec les onglets _Collections, Users, Stats, Backups_ et _Tools_ ainsi qu'un premier encadré avec l'URI à utiliser pour se connecter.
 
 ![mLab details](./../../../assets/images/mLabDBDetails.PNG)
 
@@ -21,9 +20,9 @@ Si vous cliquer sur le nom de votre base de données, vous devez voir l'interfac
 
 La première chose à faire pour se connecter à notre base de données est d'ajouter des utilisateurs qui ont accès. **Attention** : votre nom d'usager de votre compte n'est pas l'usager pour se connecter à votre base de données. Chaque base de données peut avoir sa propre liste d'utilisateurs dédiés.
 
-Pour rajouter un utilisateur, vous devez aller dans l'onglet **Users** et cliquer sur le bouton **Add database user**. Chaque nouveau utilisateur a un nom et un mot de passe et il peut être aussi créer en mode _read-only_ ce qui veut dire qu'il ne peut pas modifier les données de la base de données.
+Pour rajouter un utilisateur, vous devez aller dans l'onglet **Users** et cliquer sur le bouton **Add database user**. Chaque nouvel utilisateur a un nom et un mot de passe et il peut être aussi créé en mode _read-only_ ce qui veut dire qu'il ne peut pas modifier les données de la base de données.
 
-Maintenant que nous avons une base de donnée et un utilisateur, on peut se connecter. Le premier encadré de chaque base de donnée Mlab indique l'URL que vous avez besoin d'utiliser pour vous connecter. Dans l'exemple suivant, chaque partie de l'URL a été séparée pour mieux comprendre ce qui va dans l'URL. Pour le moment, tous ce qu'on a besoin, c'est du module node **mongodb** et on peut l'obtenir en faisant **npm install --save mongodb**. Vous devez aussi remplacer les informations telles que l'usager, son mot de passe, le host et le nom de votre base de données pour vos connecter. Créez un fichier **mongoClient.js** et mettez le code suivant :
+Maintenant que nous avons une base de données et un utilisateur, on peut se connecter. Le premier encadré de chaque base de données Mlab indique l'URL que vous avez besoin d'utiliser pour vous connecter. Dans l'exemple suivant, chaque partie de l'URL a été séparée pour mieux comprendre ce qui va dans l'URL. Pour le moment, tous ce qu'on a besoin, c'est du module node **mongodb** et on peut l'obtenir en faisant **npm install --save mongodb**. Vous devez aussi remplacer les informations telles que l'usager, son mot de passe, le host et le nom de votre base de données pour vos connecter. Créez un fichier **mongoClient.js** et mettez le code suivant :
 
 ```js
 var MongoClient = require('mongodb').MongoClient;
@@ -38,20 +37,18 @@ var DB_PORT = "dbPort";
 var DB_URL = "mongodb://" + DB_USER + ":" + DB_PASSWORD + "@" + DB_HOST + ":" + DB_PORT + "/" + DB_DB;
 
 MongoClient.connect(DB_URL,{useNewUrlParser : true}, function(err,client){
-	if(!err){
-		console.log("Nous sommes connectés à " + client.s.options.dbName);
-	}
-	else{
-		console.log(err);
-	}
+    if(!err){
+        console.log("Nous sommes connectés à " + client.s.options.dbName);
+    }
+    else{
+        console.log(err);
+    }
 });
 ```
 Si vous exécutez le script, vous devez voir le message **Nous sommes connectés à ** suivi du nom de votre base de données.
 
-
 ## Première collection
 
-Nous avons besoin d'une collection pour contenir nos données. **Mlab** offre la posibilité de créer des collections directement dans l'interface graphique à travers le bouton **Add collection** et en entrant le nom de la collection. Une fois que vous avez crée votre collection, elle est visible dans le menu principal et vous pouvez y accéder et même insérer des objets directement dans l'interface Web.
-
+Nous avons besoin d'une collection pour contenir nos données. **Mlab** offre la possibilité de créer des collections directement dans l'interface graphique à travers le bouton **Add collection** et en entrant le nom de la collection. Une fois que vous avez créé votre collection, elle est visible dans le menu principal et vous pouvez y accéder et même insérer des objets directement dans l'interface Web.
 
 Pour plus d'information sur comment exactement utiliser **MongoDB** vous pouvez vous référer à la section suivante du tutoriel.

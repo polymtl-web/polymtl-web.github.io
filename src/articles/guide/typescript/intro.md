@@ -1,7 +1,7 @@
 
 # Préambule
 
-Typescript est un langage developper et maintenu par Miscrosoft. C’est un sur-esnemble du Javascript ce qui veut dire que tout ce qui est écrit en Javascript peut être utilisé en Typescript. Aussi tout code enTypeScriptest transcompilé en JavaScript avant d’être interprété.
+Typescript est un langage developper et maintenu par Miscrosoft. C’est un sur-ensemble du Javascript ce qui veut dire que tout ce qui est écrit en Javascript peut être utilisé en Typescript. Aussi tout code enTypeScriptest transcompilé en JavaScript avant d’être interprété.
 
 Cela veut aussi dire que beaucoup de notions sont similaires entre le JavaScript et le Ts. Il est donc recommandé d’avoir un minimum de base en Js. 
 

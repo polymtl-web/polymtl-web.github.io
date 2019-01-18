@@ -58,7 +58,7 @@ app.get('/home/*',function(req,res){
 app.listen(3000);
 ```
 
-Pour le moment, on utilise toujours **app.get()** comme fonction de routage, mais ceci n'est pas la seule méthode qui nous est offerte par Express. En effet, Express nous offre une méthode pour chacun des verbes de HTTP : **GET, PUT, DELETE** ainsi qu'une méthode **ALL** qui s'exécute, peu importe le type de requête envoyée. Pour plus d'information, voir la section sur les différentes méthodes HTTP.
+Pour le moment, on utilise toujours **app.get()** comme fonction de routage, mais ceci n'est pas la seule méthode qui nous est offerte par Express. En effet, Express nous offre une méthode pour chacun des verbes de HTTP : **GET, POST, PUT, DELETE** ainsi qu'une méthode **ALL** qui s'exécute, peu importe le type de requête envoyée. Pour plus d'information, voir la section sur les différentes méthodes HTTP.
 
 ## Les Routers
 

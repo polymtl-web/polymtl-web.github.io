@@ -1,0 +1,184 @@
+[{
+    "id": "html",
+    "name": "HTML",
+    "articles": [{
+        "id": "balises-semantiques",
+        "name": "Balises sémantiques",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "plan-document",
+        "name": "Plan de document",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "validation-page",
+        "name": "Validation de la page",
+        "authors": [
+          "Antoine Béland"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "articles": [{
+        "id": "types",
+        "name": "Types",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "classes",
+        "name": "Classes",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "identifiants",
+        "name": "Identifiants",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "unites",
+        "name": "Unités de mesure",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "couleurs",
+        "name": "Couleurs",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "preprocesseurs",
+        "name": "Préprocesseurs",
+        "authors": [
+          "Antoine Béland"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "articles": [{
+        "id": "fonctions",
+        "name": "Fonctions",
+        "isVisible": false
+      },
+      {
+        "id": "manipulation-tableaux",
+        "name": "Manipulation des tableaux",
+        "authors": [
+          "Antoine Béland"
+        ]
+      },
+      {
+        "id": "asynchronisme",
+        "name": "Asynchronisme",
+        "isVisible": false
+      },
+      {
+        "id": "this-object-prototype",
+        "name": "Contexte <em>this</em> et <em>object prototype</em>",
+        "isVisible": false
+      },
+      {
+        "id": "es6",
+        "name": "Fonctionnalités ES6",
+        "isVisible": false
+      },
+      {
+        "id": "organisation-code",
+        "name": "Organisation du code",
+        "isVisible": false
+      }
+    ]
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "articles": [{
+        "id": "intro",
+        "name": "Préambule",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "basic-types",
+        "name": "Types de base",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "generic",
+        "name": "Type Générique",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "interface",
+        "name": "Interfaces",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "angular",
+    "name": "Angular 6",
+    "articles": [{
+        "id": "intro",
+        "name": "Introduction",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "routing",
+        "name": "Navigation",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "events",
+        "name": "Les Évenements",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "communication",
+        "name": "Communication",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      },
+      {
+        "id": "test",
+        "name": "Tester une application",
+        "authors": [
+          "Dylan Farvacque"
+        ]
+      }
+    ]
+  }
+]

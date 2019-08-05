@@ -1,0 +1,103 @@
+[
+  {
+    "id" : "general",
+    "name" : "Concepts généraux",
+    "articles":[
+     {
+       "id" : "mean",
+       "name" : "Introduction à MEAN",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     },
+     {
+       "id" : "crud",
+       "name" : "Méthodes HTTP",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     }
+    ]
+  },
+  {
+    "id": "node",
+    "name": "Node",
+    "articles": [
+      {
+        "id": "node",
+        "name": "Node.js",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id": "file-system",
+        "name" : "Système de fichiers",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "express",
+    "name" : "Express",
+    "articles" :[
+     {
+       "id" : "express",
+       "name" : "Express",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     },
+     {
+       "id" : "routing",
+       "name" : "Routing",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     },
+     {
+       "id" : "middleware",
+       "name" : "Middleware",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     },
+     {
+       "id" : "templating",
+       "name" : "Templating",
+       "authors": [
+         "Nikolay Radoev"
+       ]
+     }
+    ]
+  },
+  {
+    "id" : "mongoDB",
+    "name" : "MongoDB",
+    "articles": [
+      {
+        "id" : "mongoDB",
+        "name" : "Introduction",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id" : "mlab",
+        "name" : "Mlab",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      },
+      {
+        "id" : "mongodb-utilisation",
+        "name" : "Utilisation",
+        "authors": [
+          "Nikolay Radoev"
+        ]
+      }
+    ]
+  }
+]
